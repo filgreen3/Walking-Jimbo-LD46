@@ -337,40 +337,13 @@ MonoBehaviour:
   Weight: 0.75
   Lenght: 1
   SubIKTarget: {fileID: 512524610}
-  curve:
+  moveCurve:
     serializedVersion: 2
-    m_Curve:
-    - serializedVersion: 3
-      time: 0
-      value: 0
-      inSlope: 1.0180885
-      outSlope: 1.0180885
-      tangentMode: 34
-      weightedMode: 0
-      inWeight: 0
-      outWeight: 0.33333334
-    - serializedVersion: 3
-      time: 0.14229187
-      value: 0.1448657
-      inSlope: -0.06301831
-      outSlope: -0.06301831
-      tangentMode: 0
-      weightedMode: 0
-      inWeight: 0.33333334
-      outWeight: 0.1901734
-    - serializedVersion: 3
-      time: 0.9708252
-      value: -0.002357483
-      inSlope: -0.17769134
-      outSlope: -0.17769134
-      tangentMode: 34
-      weightedMode: 0
-      inWeight: 0.33333334
-      outWeight: 0
+    m_Curve: []
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
-  Speed: 0.8
+  speed: 0.8
 --- !u!212 &93853774
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -886,40 +859,13 @@ MonoBehaviour:
   Weight: 0.75
   Lenght: 1
   SubIKTarget: {fileID: 169565966}
-  curve:
+  moveCurve:
     serializedVersion: 2
-    m_Curve:
-    - serializedVersion: 3
-      time: 0
-      value: 0
-      inSlope: 1.0180885
-      outSlope: 1.0180885
-      tangentMode: 34
-      weightedMode: 0
-      inWeight: 0
-      outWeight: 0.33333334
-    - serializedVersion: 3
-      time: 0.14229187
-      value: 0.1448657
-      inSlope: -0.06301831
-      outSlope: -0.06301831
-      tangentMode: 0
-      weightedMode: 0
-      inWeight: 0.33333334
-      outWeight: 0.1901734
-    - serializedVersion: 3
-      time: 0.9708252
-      value: -0.002357483
-      inSlope: -0.17769134
-      outSlope: -0.17769134
-      tangentMode: 34
-      weightedMode: 0
-      inWeight: 0.33333334
-      outWeight: 0
+    m_Curve: []
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
-  Speed: 0.8
+  speed: 0.8
 --- !u!212 &574681457
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -1106,12 +1052,12 @@ MonoBehaviour:
   m_GameObject: {fileID: 731402285}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2308e11c94d126645b0ddb4f5722f58d, type: 3}
+  m_Script: {fileID: 11500000, guid: b6579cb126ac7f44fbfa517347bb1f77, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   Rig: {fileID: 731402287}
-  lowObject: {x: 0, y: -1.75}
-  a: 15
+  characterOffest: {x: 0, y: -1.75}
+  forceUp: 15
   move: 1
   jump: 2
   rote: 50

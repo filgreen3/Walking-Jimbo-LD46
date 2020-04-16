@@ -4,7 +4,6 @@ using UnityEngine;
 
 public class GenericSubTargetIKLineRender : GenericIKLineRender
 {
-
     public float Weight;
     public float Lenght;
 
@@ -12,17 +11,17 @@ public class GenericSubTargetIKLineRender : GenericIKLineRender
 
     protected override void Update()
     {
-        for (int i = Bones.positionCount - 2; i >= 0; i--)
+        for (int i = Bones.positionCount - 1; i >= 0; i--)
         {
             Vector3 dir;
             Vector3 target;
 
-            if (i < Bones.positionCount - 2)
+            if (i < Bones.positionCount - 1)
             {
                 target = Bones.GetPosition(i + 1);
                 dir = target - Bones.GetPosition(i);
 
-                if (i == Bones.positionCount - 3)
+                if (i == Bones.positionCount - 2)
                 {
                     dir = target - (Bones.GetPosition(i - 1) * Weight + SubIKTarget.position * (1 - Weight));
                 }

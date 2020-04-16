@@ -4,7 +4,15 @@ using UnityEngine;
 
 public class LegIKLineRender : GenericSubTargetIKLineRender
 {
-    public AnimationCurve curve;
+    [SerializeField] private AnimationCurve moveCurve;
+    [SerializeField] private float speed;
+
+
+    private Vector2 currPoint;
+    private Vector2 savePoint;
+
+    private bool process;
+
     private Vector2 Point
     {
         get
@@ -23,12 +31,6 @@ public class LegIKLineRender : GenericSubTargetIKLineRender
     }
 
 
-    private Vector2 currPoint;
-    private Vector2 savePoint;
-
-
-
-
     protected override void Update()
     {
         base.Update();
@@ -38,16 +40,11 @@ public class LegIKLineRender : GenericSubTargetIKLineRender
         for (int i = 1; i < Bones.positionCount; i++)
             Bones.SetPosition(i, Bones.GetPosition(i - 1) + (Bones.GetPosition(i) - Bones.GetPosition(i - 1)).normalized * Lenght);
 
-        Bones.SetPosition(Bones.positionCount - 2, savePoint);
-        Bones.SetPosition(Bones.positionCount - 1, Bones.GetPosition(Bones.positionCount - 2) + (Vector3.right * 0.4f));
-
-
-
+        Bones.SetPosition(Bones.positionCount - 1, savePoint);
+        
     }
 
-    private bool process;
 
-    public float Speed;
 
     private IEnumerator processMove()
     {
@@ -59,8 +56,8 @@ public class LegIKLineRender : GenericSubTargetIKLineRender
         while (t < 1f)
         {
             savePoint = Vector3.LerpUnclamped(savePoint, currPoint, t);
-            savePoint.y += curve.Evaluate(t);
-            t += 0.1f * Speed;
+            savePoint.y += moveCurve.Evaluate(t);
+            t += 0.1f * speed;
             yield return waiter;
         }
         savePoint = currPoint;
