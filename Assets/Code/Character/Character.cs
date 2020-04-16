@@ -12,6 +12,10 @@ public class Character : MonoBehaviour
 
     public Rigidbody2D Rig;
     [SerializeField] private Vector2 characterOffest = default;
+    public Vector2 CharacterOffestAddition = default;
+
+
+    public Vector2 CharacterOffest => (characterOffest + CharacterOffestAddition) * timeShift;
 
     [SerializeField] private float forceUp = default;
     [SerializeField] private float move = default;
@@ -24,7 +28,7 @@ public class Character : MonoBehaviour
     float strange1;
     float strange2;
 
-
+    float timeShift;
 
     private void Update()
     {
@@ -35,20 +39,21 @@ public class Character : MonoBehaviour
         {
             Rig.AddForce(Input.GetAxis("Horizontal") * move * Vector2.right);
         }
-        if (Input.GetAxis("Vertical") > 0 && strange1 != 0)
-        {
-            Rig.AddForce(jump * transform.up);
-        }
+
+        CharacterOffestAddition = Input.GetAxis("Vertical") * characterOffest * jump;
+
     }
 
     protected virtual void FixedUpdate()
     {
-        strange1 = 1f - Mathf.Clamp01(Physics2D.Raycast(Vector2.right * 0.2f + characterOffest + Rig.position, Vector2.down).distance);
-        strange2 = 1f - Mathf.Clamp01(Physics2D.Raycast(Vector2.left * 0.2f + characterOffest + Rig.position, Vector2.down).distance);
+        strange1 = 1f - Mathf.Clamp01(Physics2D.Raycast(Vector2.right * 0.2f + CharacterOffest + Rig.position, Vector2.down).distance);
+        strange2 = 1f - Mathf.Clamp01(Physics2D.Raycast(Vector2.left * 0.2f + CharacterOffest + Rig.position, Vector2.down).distance);
 
         strange = (strange1 + strange2) / 2f;
 
         Rig.AddForce(Vector2.up * forceUp * strange);
+
+        timeShift = 1 + (0.1f * Mathf.Sin(Time.timeSinceLevelLoad * 2));
 
     }
     void OnDrawGizmos()

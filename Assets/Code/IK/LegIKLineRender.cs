@@ -7,9 +7,12 @@ public class LegIKLineRender : GenericIKFixedPoint
     [SerializeField] private AnimationCurve moveCurve;
     [SerializeField] private float speed;
 
+    [SerializeField] private LegIKLineRender connectedLeg;
 
     private Vector2 currPoint;
-    private Vector2 savePoint;
+    public Vector2 savePoint;
+
+    [SerializeField] private float legoOffset;
 
     private bool process;
 
@@ -23,6 +26,7 @@ public class LegIKLineRender : GenericIKFixedPoint
             if ((point - savePoint).magnitude > 1)
             {
                 currPoint = point + (point - savePoint).normalized * 0.75f;
+                currPoint += (Mathf.Abs(connectedLeg.savePoint.x - savePoint.x) < 0.15f) ? Vector2.right * legoOffset : Vector2.zero;
                 StartCoroutine(processMove());
             }
 
