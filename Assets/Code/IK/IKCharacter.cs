@@ -58,7 +58,7 @@ public class IKCharacter : MonoBehaviour
 [System.Serializable]
 public class IKStructure
 {
-    public GenericIK BodyPart;
+    public GenericIKLineRender BodyPart;
     public Vector2 TargetPosition => BodyPart.IKTarget;
 
 }
