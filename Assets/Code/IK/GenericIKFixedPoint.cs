@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class GenericIKFixedPoint : GenericSubTargetIKLineRender
 {
+    [ContextMenu("Update")]
+
     protected override void Update()
     {
         base.Update();

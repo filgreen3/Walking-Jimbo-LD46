@@ -10,11 +10,14 @@ public class GenericIKLineRender : MonoBehaviour
     public float Weight;
     public float Lenght;
 
+    public float zOffset;
+
     public virtual Vector3 IKTarget => target.position;
 
 
     protected virtual void Update()
     {
+
         for (int i = Bones.positionCount - 1; i >= 0; i--)
         {
             Vector3 dir;
@@ -29,11 +32,14 @@ public class GenericIKLineRender : MonoBehaviour
                 target = IKTarget;
             }
 
+
+
+
             dir = target - Bones.GetPosition(i);
             dir.Normalize();
 
             var pos = target - dir * Lenght;
-            pos.z = 0;
+            pos.z = zOffset;
             Bones.SetPosition(i, pos);
         }
     }

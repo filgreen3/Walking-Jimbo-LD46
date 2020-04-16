@@ -33,7 +33,7 @@ public class GenericSubTargetIKLineRender : GenericIKLineRender
             dir.Normalize();
 
             var pos = target - dir * Lenght;
-            pos.z = 0;
+            pos.z = zOffset;
             Bones.SetPosition(i, pos);
         }
     }
