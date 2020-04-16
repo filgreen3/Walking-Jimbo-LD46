@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class LegIKLineRender : GenericSubTargetIKLineRender
+public class LegIKLineRender : GenericIKFixedPoint
 {
     [SerializeField] private AnimationCurve moveCurve;
     [SerializeField] private float speed;
@@ -35,13 +35,8 @@ public class LegIKLineRender : GenericSubTargetIKLineRender
     {
         base.Update();
 
-        Bones.SetPosition(0, transform.position);
-
-        for (int i = 1; i < Bones.positionCount; i++)
-            Bones.SetPosition(i, Bones.GetPosition(i - 1) + (Bones.GetPosition(i) - Bones.GetPosition(i - 1)).normalized * Lenght);
-
         Bones.SetPosition(Bones.positionCount - 1, savePoint);
-        
+
     }
 
 

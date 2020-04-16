@@ -4,8 +4,6 @@ using UnityEngine;
 
 public class GenericSubTargetIKLineRender : GenericIKLineRender
 {
-    public float Weight;
-    public float Lenght;
 
     public Transform SubIKTarget;
 
@@ -30,7 +28,6 @@ public class GenericSubTargetIKLineRender : GenericIKLineRender
             {
                 target = IKTarget;
                 dir = Vector3.zero;
-
             }
 
             dir.Normalize();

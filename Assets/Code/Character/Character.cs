@@ -4,6 +4,12 @@ using UnityEngine;
 
 public class Character : MonoBehaviour
 {
+
+    [SerializeField] protected Transform Transf;
+    [SerializeField] protected ArmIK[] Arms = default;
+
+
+
     public Rigidbody2D Rig;
     [SerializeField] private Vector2 characterOffest = default;
 
@@ -35,7 +41,7 @@ public class Character : MonoBehaviour
         }
     }
 
-    private void FixedUpdate()
+    protected virtual void FixedUpdate()
     {
         strange1 = 1f - Mathf.Clamp01(Physics2D.Raycast(Vector2.right * 0.2f + characterOffest + Rig.position, Vector2.down).distance);
         strange2 = 1f - Mathf.Clamp01(Physics2D.Raycast(Vector2.left * 0.2f + characterOffest + Rig.position, Vector2.down).distance);
