@@ -2,15 +2,16 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Player : ArmedCharacter
+public class Player : Character
 {
-    public Gun PlayerGun;
-    public override Vector3 LookPoint { get => WorldManager.WorldLookPoint; }
+
+    public virtual Vector3 LookPoint { get => WorldManager.WorldLookPoint; }
+    public ArmIK Arm;
 
 
-
-    private void Start()
+    protected override void FixedUpdate()
     {
-        CharacterGun = PlayerGun;
+        base.FixedUpdate();
+        Arm.targetObj.localPosition = Vector3.ClampMagnitude((LookPoint - Arm.transform.position), 5f);
     }
 }

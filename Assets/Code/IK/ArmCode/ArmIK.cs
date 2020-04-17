@@ -2,21 +2,22 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class IKArm : GenericIKLineRender
+public class ArmIK : GenericIK
 {
 
-    [SerializeField] private Camera cameraMain;
 
-    public override Vector3 IKTarget => cameraMain.ScreenToWorldPoint(Input.mousePosition);
+    public override Vector2 IKTarget => targetObj.position;
 
     protected override void Update()
     {
         base.Update();
 
-        Bones.SetPosition(0, transform.position);
 
-        for (int i = 1; i < Bones.positionCount; i++)
-            Bones.SetPosition(i, Bones.GetPosition(i - 1) + (Bones.GetPosition(i) - Bones.GetPosition(i - 1)).normalized * Lenght);
+        Bones[0].position = transform.position;
+
+        for (int i = 1; i < Bones.Count; i++)
+            Bones[i].position = Bones[i - 1].endPoint;
+
     }
 
 }
