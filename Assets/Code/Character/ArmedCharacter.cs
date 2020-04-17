@@ -8,7 +8,7 @@ public class ArmedCharacter : Character
 
     public virtual Vector3 LookPoint { get; protected set; }
 
-    public Gun CharacterGun
+    public Gun CharacterArm
     {
         get
         {
@@ -31,7 +31,7 @@ public class ArmedCharacter : Character
     {
         foreach (var arm in Arms)
         {
-            arm.ArmTarget = value.transform;
+            arm.targetObj = value.transform;
         }
     }
 
@@ -42,7 +42,7 @@ public class ArmedCharacter : Character
         pos.z = 0;
         pos = Vector3.ClampMagnitude(pos, 3f);
 
-        CharacterGun.Transf.localPosition = pos;
+        CharacterArm.Transf.localPosition = pos;
 
         if (Input.GetMouseButton(1))
         {
@@ -60,9 +60,9 @@ public class ArmedCharacter : Character
             var angle = (57.2f * Mathf.Atan2(pos.x, pos.y) - 90f);
             var angleBool = (Mathf.Abs(angle) > 90);
 
-            CharacterGun.Transf.eulerAngles = Vector3.forward * (angle * (angleBool ? 1 : -1)) - Vector3.right * (angleBool ? 180 : 0);
+            CharacterArm.Transf.eulerAngles = Vector3.forward * (angle * (angleBool ? 1 : -1)) - Vector3.right * (angleBool ? 180 : 0);
         }
-        prevPoint = CharacterGun.Transf.localPosition;
+        prevPoint = CharacterArm.Transf.localPosition;
     }
 
     void AngleMove(Vector3 pos)
@@ -70,7 +70,7 @@ public class ArmedCharacter : Character
         var angle = (57.2f * Mathf.Atan2(pos.x, pos.y) - 90f);
         var angleBool = (Mathf.Abs(angle) > 90);
 
-        CharacterGun.Transf.eulerAngles = Vector3.forward * (angle * (angleBool ? 1 : -1)) - Vector3.right * (angleBool ? 180 : 0);
+        CharacterArm.Transf.eulerAngles = Vector3.forward * (angle * (angleBool ? 1 : -1)) - Vector3.right * (angleBool ? 180 : 0);
     }
 
 
