@@ -335,40 +335,8 @@ MonoBehaviour:
 Transform:
   m_CorrespondingSourceObject: {fileID: 4423432672808409921, guid: 5f82374cb745f3d49aa436293118a722,
     type: 3}
-  m_PrefabInstance: {fileID: 4423432672515470091}
+  m_PrefabInstance: {fileID: 4583010356399485206}
   m_PrefabAsset: {fileID: 0}
---- !u!1 &339537015 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 4423432672808409922, guid: 5f82374cb745f3d49aa436293118a722,
-    type: 3}
-  m_PrefabInstance: {fileID: 4423432672515470091}
-  m_PrefabAsset: {fileID: 0}
---- !u!50 &339537018 stripped
-Rigidbody2D:
-  m_CorrespondingSourceObject: {fileID: 4423432672808409926, guid: 5f82374cb745f3d49aa436293118a722,
-    type: 3}
-  m_PrefabInstance: {fileID: 4423432672515470091}
-  m_PrefabAsset: {fileID: 0}
---- !u!231 &339537020
-SpringJoint2D:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 339537015}
-  m_Enabled: 0
-  serializedVersion: 4
-  m_EnableCollision: 0
-  m_ConnectedRigidBody: {fileID: 0}
-  m_BreakForce: Infinity
-  m_BreakTorque: Infinity
-  m_AutoConfigureConnectedAnchor: 0
-  m_Anchor: {x: -0.86, y: 0.61}
-  m_ConnectedAnchor: {x: 0, y: 0}
-  m_AutoConfigureDistance: 1
-  m_Distance: 3.4107182
-  m_DampingRatio: 0
-  m_Frequency: 1
 --- !u!1 &378477919
 GameObject:
   m_ObjectHideFlags: 0
@@ -722,7 +690,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 831810159}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -7.95, y: 3.21, z: 0}
+  m_LocalPosition: {x: -24.45, y: 2.92, z: 0}
   m_LocalScale: {x: 2, y: 2, z: 2}
   m_Children: []
   m_Father: {fileID: 0}
@@ -1500,7 +1468,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1085787820}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -15.11, y: 7.18, z: 0}
+  m_LocalPosition: {x: -49.42, y: 6.21, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 2}
   m_Children: []
   m_Father: {fileID: 0}
@@ -1678,43 +1646,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fe6a60e34174cab419729ce52e90f60f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!1001 &4423432672515470091
+--- !u!1001 &4583010356399485206
 PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 4423432671259304358, guid: 5f82374cb745f3d49aa436293118a722,
-        type: 3}
-      propertyPath: ProcessState
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4423432671421530605, guid: 5f82374cb745f3d49aa436293118a722,
-        type: 3}
-      propertyPath: Force
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 4423432671421530605, guid: 5f82374cb745f3d49aa436293118a722,
-        type: 3}
-      propertyPath: SelfRig
-      value: 
-      objectReference: {fileID: 339537018}
-    - target: {fileID: 4423432671421530605, guid: 5f82374cb745f3d49aa436293118a722,
-        type: 3}
-      propertyPath: Connector
-      value: 
-      objectReference: {fileID: 339537020}
-    - target: {fileID: 4423432672225950924, guid: 5f82374cb745f3d49aa436293118a722,
-        type: 3}
-      propertyPath: ProcessState
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4423432672509541252, guid: 5f82374cb745f3d49aa436293118a722,
-        type: 3}
-      propertyPath: ProcessState
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 4423432672808409921, guid: 5f82374cb745f3d49aa436293118a722,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -1774,11 +1712,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: GG (1)
-      objectReference: {fileID: 0}
-    - target: {fileID: 4423432673236533550, guid: 5f82374cb745f3d49aa436293118a722,
-        type: 3}
-      propertyPath: ProcessState
-      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 5f82374cb745f3d49aa436293118a722, type: 3}

@@ -53,7 +53,7 @@ public class Character : MonoBehaviour
 
         Rig.AddForce(Vector2.up * forceUp * strange);
 
-        timeShift = 1 + (0.1f * Mathf.Sin(Time.timeSinceLevelLoad * 2));
+        timeShift = 1 + (0.025f * Mathf.Sin(Time.timeSinceLevelLoad * 2));
 
     }
     void OnDrawGizmos()
