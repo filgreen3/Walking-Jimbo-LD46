@@ -2,9 +2,6 @@ using UnityEngine;
 
 public class PlayerArm : ArmIK
 {
-
-
-
     public Transform Clac1;
     public Transform Clac2;
 
@@ -14,7 +11,17 @@ public class PlayerArm : ArmIK
 
     public LayerMask TakeMask;
 
-    public Vector3 prevPoint;
+    public float Force;
+
+    public Joint2D Connector;
+
+
+    public const float maxMass = 2f;
+
+
+
+    public override Vector2 IKTarget => (TakedObject != null && TakedObject.mass > maxMass) ? TakedObject.position : (Vector2)targetObj.position;
+
 
     protected override void Update()
     {
@@ -33,8 +40,20 @@ public class PlayerArm : ArmIK
             var t = Physics2D.OverlapCircleAll(RigTakeObj.position, 1f, TakeMask);
             if (t.Length > 0)
             {
+
                 TakedObject = t[0].gameObject.GetComponent<Rigidbody2D>();
-                TakedObject.gravityScale = 0f;
+
+
+                if (TakedObject.mass > maxMass)
+                {
+                    Connector.enabled = true;
+                    Connector.connectedBody = TakedObject;
+                }
+                else
+                {
+                    TakedObject.gravityScale = 0f;
+                    TakedObject.transform.SetParent(RigTakeObj);
+                }
             }
         }
 
@@ -52,8 +71,11 @@ public class PlayerArm : ArmIK
             if (TakedObject != null)
             {
                 TakedObject.gravityScale = 1f;
-                TakedObject.velocity = Vector3.ClampMagnitude((RigTakeObj.position - prevPoint) * 50f, 10f);
+                TakedObject.transform.SetParent(null);
                 TakedObject = null;
+
+                Connector.enabled = false;
+                Connector.connectedBody = null;
             }
         }
 
@@ -61,10 +83,11 @@ public class PlayerArm : ArmIK
 
         if (TakedObject != null && Input.GetMouseButton(0))
         {
-            TakedObject.MovePosition(RigTakeObj.position);
+            if (TakedObject.mass > maxMass)
+                TakedObject.AddForce(Vector2.ClampMagnitude((Vector2)targetObj.position - TakedObject.position, 1f) * Force);
+            else
+                TakedObject.transform.localPosition = Vector3.zero;
 
-            if ((RigTakeObj.position - prevPoint).magnitude>0.1f)
-                prevPoint = RigTakeObj.position;
 
         }
 
