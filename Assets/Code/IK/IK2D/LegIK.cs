@@ -40,8 +40,11 @@ public class LegIK : GenericSubTargetIK
 
 
 
-
-
+    private void Start()
+    {
+        StopAllCoroutines();
+        ProcessState = false;
+    }
 
     protected override void Update()
     {
