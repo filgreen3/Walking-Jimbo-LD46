@@ -27,8 +27,7 @@ public class LegIK : GenericSubTargetIK
             var point = Physics2D.Raycast(targetObj.position, Vector2.down).point;
 
             if ((!ConnectedLeg.ProcessState && Mathf.Abs(point.x - savePoint.x) > defVlaue) ||
-            Mathf.Abs(point.x - savePoint.x) > defVlaue * 1.5f ||
-            Mathf.Abs(point.y - savePoint.y) > 0.2f)
+            Mathf.Abs(point.x - savePoint.x) > defVlaue * 1.5f)
             {
                 currPoint = point;
                 ProcessState = true;
@@ -39,6 +38,7 @@ public class LegIK : GenericSubTargetIK
         }
     }
 
+    // Mathf.Abs(point.y - savePoint.y) > 0.2f)
 
 
     private void Start()
