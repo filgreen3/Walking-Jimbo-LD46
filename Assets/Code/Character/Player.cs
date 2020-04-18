@@ -30,15 +30,21 @@ public class Player : Character
         base.FixedUpdate();
 
         var armTr = Arm.Transf;
-        var target = LookPoint;
+        var maxDist = 5f;
+
+
 
         if (Physics2D.RaycastNonAlloc(armTr.position, LookPoint - armTr.position, hit, 5f, HitMask) > 0)
         {
-            target = hit[0].point;
+            maxDist = hit[0].distance;
         }
 
-        var t = Vector2.ClampMagnitude(target - armTr.position, 5f) + (Vector2)(armTr.position);
+        var t = Vector2.ClampMagnitude(LookPoint - armTr.position, maxDist) + (Vector2)(armTr.position);
         t = (t - armTarget.position) * ArmForce;
         armTarget.velocity = t * t.magnitude;
+
+
+        //if (!rotating && Rig.velocity.magnitude < 1f && Mathf.Abs(armTarget.position.x - Transf.position.x) > 1f)
+        //    StartCoroutine(TurnAround(armTarget.position.x - Transf.position.x > 0 ? 180 : 0));
     }
 }

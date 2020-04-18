@@ -26,32 +26,69 @@ public class Character : MonoBehaviour
     float strange;
     float timeShift;
 
+
+    protected bool rotating;
+
+
     private void Update()
     {
-        var horiz = Input.GetAxis("Horizontal");
-        if (horiz != 0)
-        {
-            Rig.AddForce(horiz * move * Vector2.right);
-            if (Mathf.Abs(Rig.velocity.x) > 5f)
-                Transf.eulerAngles = Vector3.up * ((Rig.velocity.x > 0) ? 180 : 0);
-
-        }
-
-        CharacterOffestAddition = Input.GetAxis("Vertical") * characterOffest * jump;
 
     }
 
     protected virtual void FixedUpdate()
     {
-        var ray = Physics2D.Raycast(CharacterOffest + Rig.position, Vector2.down);
-        strange = 1f - Mathf.Clamp01(ray.distance);
-
-        Rig.rotation = Mathf.Atan2(ray.normal.y, ray.normal.x) * 57.2f - 90f;
-        Rig.AddForce(Vector2.up * forceUp * strange);
-
         timeShift = 1 + (0.025f * Mathf.Sin(Time.timeSinceLevelLoad * 2));
 
+        var horiz = Input.GetAxis("Horizontal");
+
+        if (horiz != 0)
+        {
+            Rig.AddForce(horiz * move * Vector2.right);
+
+            if (!rotating &&
+            Mathf.Abs(Rig.velocity.x) > 2f &&
+            (Rig.velocity.x > 0 && Transf.eulerAngles.y < 90 || Rig.velocity.x < 0 && Transf.eulerAngles.y > 90))
+            {
+                rotating = true;
+                StartCoroutine(TurnAround(Rig.velocity.x > 0 ? 180 : 0));
+            }
+
+        }
+        CharacterOffestAddition = Input.GetAxis("Vertical") * characterOffest * jump;
+
+
+
+        var ray = Physics2D.Raycast(CharacterOffest + Rig.position, Vector2.down, 2, LegMask);
+
+        strange = 1f - Mathf.Clamp01(ray.distance);
+
+        if (!rotating)
+            Rig.rotation = Mathf.Atan2(ray.normal.y, ray.normal.x) * 57.2f - 90f;
+        Rig.AddForce(Vector2.up * 9.81f * strange * strange * forceUp);
     }
+
+    protected IEnumerator TurnAround(float targAngle)
+    {
+        rotating = true;
+        var waiter = new WaitForFixedUpdate();
+        var t = 0f;
+        var angle = Transf.eulerAngles.y;
+        while (t <= 1f)
+        {
+            angle = Mathf.Lerp(angle, targAngle, t);
+            Transf.eulerAngles = Vector3.up * angle;
+            t += 0.005f;
+            yield return waiter;
+        }
+
+        Transf.eulerAngles = Vector3.up * targAngle;
+
+        rotating = false;
+        yield break;
+
+
+    }
+
     void OnDrawGizmos()
     {
         Gizmos.color = Color.red;

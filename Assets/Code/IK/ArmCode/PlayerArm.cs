@@ -109,7 +109,7 @@ public class PlayerArm : ArmIK
         {
             TakedObject.gravityScale = 1f;
             TakedObject.transform.SetParent(null);
-            TakedObject.velocity = ArmTarget.velocity;
+            TakedObject.velocity = ArmTarget.velocity * 1.2f;
 
             Connector.enabled = false;
             Connector.connectedBody = null;

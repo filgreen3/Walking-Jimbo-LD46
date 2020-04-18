@@ -33,12 +33,12 @@ public class LegIK : GenericSubTargetIK
                 ProcessState = true;
                 StartCoroutine(processMove());
             }
+            savePoint.y = point.y;
 
             return savePoint;
         }
     }
 
-    // Mathf.Abs(point.y - savePoint.y) > 0.2f)
 
 
     private void Start()
