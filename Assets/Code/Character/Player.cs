@@ -8,8 +8,14 @@ public class Player : Character
     public virtual Vector3 LookPoint { get => WorldManager.WorldLookPoint; }
     public ArmIK Arm;
 
+    private void Start()
+    {
+        ArmTarget =   Arm.targetObj.GetComponent<Rigidbody2D>();
+    }
+
 
     public Rigidbody2D ArmTarget;
+
 
     protected override void FixedUpdate()
     {
