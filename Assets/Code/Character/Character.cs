@@ -9,7 +9,7 @@ public class Character : MonoBehaviour
     [SerializeField] protected ArmIK[] Arms = default;
 
 
-
+    public LayerMask LegMask;
     public Rigidbody2D Rig;
     [SerializeField] private Vector2 characterOffest = default;
     public Vector2 CharacterOffestAddition = default;
@@ -24,20 +24,17 @@ public class Character : MonoBehaviour
 
 
     float strange;
-
-    float strange1;
-    float strange2;
-
     float timeShift;
 
     private void Update()
     {
-
-        Rig.rotation = (strange1 - strange2) * rote;
-
-        if (Input.GetAxis("Horizontal") != 0)
+        var horiz = Input.GetAxis("Horizontal");
+        if (horiz != 0)
         {
-            Rig.AddForce(Input.GetAxis("Horizontal") * move * Vector2.right);
+            Rig.AddForce(horiz * move * Vector2.right);
+            if (Mathf.Abs(Rig.velocity.x) > 5f)
+                Transf.eulerAngles = Vector3.up * ((Rig.velocity.x > 0) ? 180 : 0);
+
         }
 
         CharacterOffestAddition = Input.GetAxis("Vertical") * characterOffest * jump;
@@ -46,11 +43,10 @@ public class Character : MonoBehaviour
 
     protected virtual void FixedUpdate()
     {
-        strange1 = 1f - Mathf.Clamp01(Physics2D.Raycast(Vector2.right * 0.2f + CharacterOffest + Rig.position, Vector2.down).distance);
-        strange2 = 1f - Mathf.Clamp01(Physics2D.Raycast(Vector2.left * 0.2f + CharacterOffest + Rig.position, Vector2.down).distance);
+        var ray = Physics2D.Raycast(CharacterOffest + Rig.position, Vector2.down);
+        strange = 1f - Mathf.Clamp01(ray.distance);
 
-        strange = (strange1 + strange2) / 2f;
-
+        Rig.rotation = Mathf.Atan2(ray.normal.y, ray.normal.x) * 57.2f - 90f;
         Rig.AddForce(Vector2.up * forceUp * strange);
 
         timeShift = 1 + (0.025f * Mathf.Sin(Time.timeSinceLevelLoad * 2));

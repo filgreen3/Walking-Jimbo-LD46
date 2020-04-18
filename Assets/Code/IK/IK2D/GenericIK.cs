@@ -38,7 +38,7 @@ public abstract class GenericIK : MonoBehaviour
 
 
             item.rotation = angle;
-            item.position = target - dir;
+            item.position = target - dir * item.lenght;
         }
 
     }
