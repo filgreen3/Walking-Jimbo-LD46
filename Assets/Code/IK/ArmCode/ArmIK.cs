@@ -5,8 +5,14 @@ using UnityEngine;
 public class ArmIK : GenericIK
 {
 
-
+    public Transform Transf;
     public override Vector2 IKTarget => targetObj.position;
+
+
+    private void Start()
+    {
+        Transf = transform;
+    }
 
     protected override void Update()
     {

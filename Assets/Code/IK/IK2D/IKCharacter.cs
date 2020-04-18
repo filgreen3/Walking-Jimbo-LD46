@@ -22,12 +22,7 @@ public class IKCharacter : MonoBehaviour
 
     private void Update()
     {
-
         Rig.rotation = (strange1 - strange2) * rote;
-
-
-
-
         if (Input.GetAxis("Horizontal") != 0)
         {
             Rig.AddForce(Input.GetAxis("Horizontal") * move * Vector2.right);

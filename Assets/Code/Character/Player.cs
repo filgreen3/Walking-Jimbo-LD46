@@ -5,10 +5,16 @@ using UnityEngine;
 public class Player : Character
 {
 
-    public virtual Vector3 LookPoint { get => WorldManager.WorldLookPoint; }
+    [Header("Arm Setting")]
     public ArmIK Arm;
-    private Rigidbody2D armTarget;
     public float ArmForce;
+    public LayerMask HitMask;
+
+    private Rigidbody2D armTarget;
+
+
+    public virtual Vector3 LookPoint { get => WorldManager.WorldLookPoint; }
+
 
 
     private void Start()
@@ -17,14 +23,22 @@ public class Player : Character
     }
 
 
-
+    private RaycastHit2D[] hit = new RaycastHit2D[1];
 
     protected override void FixedUpdate()
     {
         base.FixedUpdate();
-        var t = Vector2.ClampMagnitude(LookPoint - Arm.transform.position, 3f) + (Vector2)Arm.transform.position;
+
+        var armTr = Arm.Transf;
+        var target = LookPoint;
+
+        if (Physics2D.RaycastNonAlloc(armTr.position, LookPoint - armTr.position, hit, 5f, HitMask) > 0)
+        {
+            target = hit[0].point;
+        }
+
+        var t = Vector2.ClampMagnitude(target - armTr.position, 5f) + (Vector2)(armTr.position);
         t = (t - armTarget.position) * ArmForce;
-        armTarget.AddForce(t * t.magnitude);
-        Arm.targetObj.localPosition = Vector3.ClampMagnitude(Arm.targetObj.localPosition, 3f);
+        armTarget.velocity = t * t.magnitude;
     }
 }

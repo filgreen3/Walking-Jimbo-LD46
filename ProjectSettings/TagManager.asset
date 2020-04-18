@@ -4,7 +4,11 @@
 TagManager:
   serializedVersion: 2
   tags:
+<<<<<<< HEAD
   - Elevator
+=======
+  - BattreyLock
+>>>>>>> ff7ba299eb16f6a0922be86c9c425fe04215e436
   layers:
   - Default
   - TransparentFX
@@ -14,9 +18,15 @@ TagManager:
   - UI
   - 
   - 
+<<<<<<< HEAD
   - Item
   - Wall
   - 
+=======
+  - SmalItem
+  - Player
+  - BigItem
+>>>>>>> ff7ba299eb16f6a0922be86c9c425fe04215e436
   - 
   - 
   - 

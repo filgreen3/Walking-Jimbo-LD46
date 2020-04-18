@@ -9,7 +9,7 @@ public class Gunshot : GenericItem
     [SerializeField] private float force;
 
 
-    public override void Action() => Shot();
+    public override void Action(PlayerArm arm) => Shot();
 
     public void Shot()
     {

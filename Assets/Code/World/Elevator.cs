@@ -15,5 +15,11 @@ public class Elevator : MonoBehaviour
     public GameObject CurrentLRoom;
     public GameObject CurrentCRoom;
 
-
+    private void OnTriggerStay2D(Collider2D collision)
+    {
+        if (collision.gameObject.tag=="Player")
+        {
+            
+        }
+    }
 }
