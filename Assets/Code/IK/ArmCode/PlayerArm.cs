@@ -8,6 +8,7 @@ public class PlayerArm : ArmIK
     [Header("Take Setting")]
     public Transform RigTakeObj;
     public Rigidbody2D TakedObject;
+    public Rigidbody2D ArmTarget;
 
     public LayerMask TakeMask;
 
@@ -37,7 +38,7 @@ public class PlayerArm : ArmIK
             Clac2.Rotate(Vector3.forward, 180);
 
 
-            var t = Physics2D.OverlapCircleAll(RigTakeObj.position, 1f, TakeMask);
+            var t = Physics2D.OverlapCircleAll(RigTakeObj.position, .5f, TakeMask);
             if (t.Length > 0)
             {
 
@@ -69,10 +70,12 @@ public class PlayerArm : ArmIK
             {
                 TakedObject.gravityScale = 1f;
                 TakedObject.transform.SetParent(null);
-                TakedObject = null;
+                TakedObject.velocity = ArmTarget.velocity;
 
                 Connector.enabled = false;
                 Connector.connectedBody = null;
+
+                TakedObject = null;
             }
         }
         if (TakedObject != null && Input.GetMouseButton(0))
@@ -80,7 +83,11 @@ public class PlayerArm : ArmIK
             if (TakedObject.mass > maxMass)
                 TakedObject.AddForce(Vector2.ClampMagnitude((Vector2)targetObj.position - TakedObject.position, 1f) * Force);
             else
+            {
                 TakedObject.transform.localPosition = Vector3.zero;
+                ArmTarget.velocity += TakedObject.velocity * TakedObject.mass / ArmTarget.mass;
+                TakedObject.velocity /= ArmTarget.mass / TakedObject.mass;
+            }
 
 
         }

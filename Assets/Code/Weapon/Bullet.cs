@@ -6,13 +6,8 @@ public class Bullet : MonoBehaviour
 {
     void OnCollisionEnter2D(Collision2D coll)
     {
-        if (coll.relativeVelocity.magnitude > 10f)
-        {
-            Destroy(gameObject, 0.01f);
-        }
-    }
-    void Start()
-    {
-        Destroy(gameObject, 3f);
+
+        Destroy(gameObject, 0.01f);
+
     }
 }

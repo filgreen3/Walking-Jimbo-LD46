@@ -302,7 +302,7 @@ Rigidbody2D:
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
   m_Mass: 1
-  m_LinearDrag: 0
+  m_LinearDrag: 1
   m_AngularDrag: 0.05
   m_GravityScale: 0
   m_Material: {fileID: 0}
@@ -1500,5 +1500,10 @@ PrefabInstance:
       propertyPath: ConnectedLeg
       value: 
       objectReference: {fileID: 893055525}
+    - target: {fileID: 4583010357386445808, guid: 5f82374cb745f3d49aa436293118a722,
+        type: 3}
+      propertyPath: ArmTarget
+      value: 
+      objectReference: {fileID: 184189553}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 5f82374cb745f3d49aa436293118a722, type: 3}
