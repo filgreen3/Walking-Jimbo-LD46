@@ -55,14 +55,16 @@ public class Character : MonoBehaviour
         CharacterOffestAddition = Input.GetAxis("Vertical") * characterOffest * jump;
 
 
-
         var ray = Physics2D.Raycast(CharacterOffest + Rig.position, Vector2.down, 2, LegMask);
 
-        strange = 1f - Mathf.Clamp01(ray.distance);
+        if (ray)
+        {
+            strange = 1f - Mathf.Clamp01(ray.distance);
 
-        if (!rotating)
-            Rig.rotation = Mathf.Atan2(ray.normal.y, ray.normal.x) * 57.2f - 90f;
-        Rig.AddForce(Vector2.up * 9.81f * strange * strange * forceUp);
+            if (!rotating)
+                Rig.rotation = Mathf.Atan2(ray.normal.y, ray.normal.x) * 57.2f - 90f;
+            Rig.AddForce(Vector2.up * 9.81f * strange * strange * forceUp);
+        }
     }
 
     protected IEnumerator TurnAround(float targAngle)
