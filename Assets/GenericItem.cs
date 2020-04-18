@@ -4,5 +4,5 @@ using UnityEngine;
 
 public abstract class GenericItem : MonoBehaviour
 {
-    public abstract void Action();
+    public abstract void Action(PlayerArm arm);
 }

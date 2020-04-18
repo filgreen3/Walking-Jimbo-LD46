@@ -32,12 +32,12 @@ public class Player : Character
         var armTr = Arm.Transf;
         var target = LookPoint;
 
-        if (Physics2D.RaycastNonAlloc(armTr.position, LookPoint - armTr.position, hit, 3f, HitMask) > 0)
+        if (Physics2D.RaycastNonAlloc(armTr.position, LookPoint - armTr.position, hit, 5f, HitMask) > 0)
         {
             target = hit[0].point;
         }
 
-        var t = Vector2.ClampMagnitude(target - armTr.position, 3f) + (Vector2)(armTr.position);
+        var t = Vector2.ClampMagnitude(target - armTr.position, 5f) + (Vector2)(armTr.position);
         t = (t - armTarget.position) * ArmForce;
         armTarget.velocity = t * t.magnitude;
     }
