@@ -56,9 +56,6 @@ public class PlayerArm : ArmIK
                 }
             }
         }
-
-
-
         if (Input.GetMouseButtonUp(0))
         {
             Clac1.Rotate(Vector3.forward, -180);
@@ -78,9 +75,6 @@ public class PlayerArm : ArmIK
                 Connector.connectedBody = null;
             }
         }
-
-
-
         if (TakedObject != null && Input.GetMouseButton(0))
         {
             if (TakedObject.mass > maxMass)
@@ -91,6 +85,9 @@ public class PlayerArm : ArmIK
 
         }
 
+
+        if (Input.GetMouseButtonDown(1))
+            TakedObject?.GetComponent<GenericItem>()?.Action();
 
 
 
