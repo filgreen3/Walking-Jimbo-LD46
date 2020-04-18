@@ -52,28 +52,17 @@ public class Character : MonoBehaviour
             }
 
         }
-
-
-
         CharacterOffestAddition = Input.GetAxis("Vertical") * characterOffest * jump;
+
+
 
         var ray = Physics2D.Raycast(CharacterOffest + Rig.position, Vector2.down, 2, LegMask);
 
+        strange = 1f - Mathf.Clamp01(ray.distance);
 
-        if (ray)
-        {
-            Rig.AddForce(Vector2.up * 9.81f * strange * strange * forceUp);
-            strange = 1f - Mathf.Clamp01(ray.distance);
-
-            if (!rotating)
-                Rig.rotation = Mathf.Atan2(ray.normal.y, ray.normal.x) * 57.2f - 90f;
-
-
-        }
-
-
-
-
+        if (!rotating)
+            Rig.rotation = Mathf.Atan2(ray.normal.y, ray.normal.x) * 57.2f - 90f;
+        Rig.AddForce(Vector2.up * 9.81f * strange * strange * forceUp);
     }
 
     protected IEnumerator TurnAround(float targAngle)
@@ -86,7 +75,7 @@ public class Character : MonoBehaviour
         {
             angle = Mathf.Lerp(angle, targAngle, t);
             Transf.eulerAngles = Vector3.up * angle;
-            t += 0.025f;
+            t += 0.005f;
             yield return waiter;
         }
 

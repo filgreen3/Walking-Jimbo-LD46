@@ -4,11 +4,8 @@
 TagManager:
   serializedVersion: 2
   tags:
-<<<<<<< HEAD
   - Elevator
-=======
   - BattreyLock
->>>>>>> ff7ba299eb16f6a0922be86c9c425fe04215e436
   layers:
   - Default
   - TransparentFX
@@ -18,15 +15,9 @@ TagManager:
   - UI
   - 
   - 
-<<<<<<< HEAD
   - Item
   - Wall
   - 
-=======
-  - SmalItem
-  - Player
-  - BigItem
->>>>>>> ff7ba299eb16f6a0922be86c9c425fe04215e436
   - 
   - 
   - 
@@ -60,4 +51,7 @@ TagManager:
     locked: 0
   - name: Walls
     uniqueID: 1334725967
+    locked: 0
+  - name: UI
+    uniqueID: 3568828893
     locked: 0
