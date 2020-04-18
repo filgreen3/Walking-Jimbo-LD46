@@ -9,6 +9,8 @@ public class Player : Character
     public ArmIK Arm;
 
 
+    public Rigidbody2D ArmTarget;
+
     protected override void FixedUpdate()
     {
         base.FixedUpdate();

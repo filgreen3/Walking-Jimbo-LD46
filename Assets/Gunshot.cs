@@ -13,6 +13,7 @@ public class Gunshot : GenericItem
 
     public void Shot()
     {
+        GetComponent<Rigidbody2D>().AddForce(-transform.right * force);
         StartCoroutine(Attack());
     }
     IEnumerator Attack()
