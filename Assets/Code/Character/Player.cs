@@ -23,7 +23,7 @@ public class Player : Character
         armTarget = Arm.targetObj.GetComponent<Rigidbody2D>();
     }
 
-    protected override bool ExtraCoditionToRotate => Arm.TakedObject == null;
+    protected override bool ExtraCoditionToRotate => Arm.TakedObject == null || Arm.TakedObject.mass < 1f;
 
     private RaycastHit2D[] hit = new RaycastHit2D[1];
 
