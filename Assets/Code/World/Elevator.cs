@@ -15,11 +15,50 @@ public class Elevator : MonoBehaviour
     public GameObject CurrentLRoom;
     public GameObject CurrentCRoom;
 
-    private void OnTriggerStay2D(Collider2D collision)
+    Transform Player;
+    SpriteRenderer Indicator;
+
+    public bool Active = false;
+
+    private void Start()
     {
-        if (collision.gameObject.tag=="Player")
+        Player = GameObject.FindGameObjectWithTag("Player").transform;
+        Indicator = gameObject.transform.Find("Indicator").gameObject.GetComponent<SpriteRenderer>();
+
+    }
+    private void Update()
+    {
+        if (Active)
         {
-            
+            Indicator.color = new Color(0.149f, 0.858f, 0.579f);
+            if (Player.position.x < transform.position.x + 1
+            && Player.position.x > transform.position.x - 1)
+            {
+                Active = false;
+                StartCoroutine("Elevate");
+            }
         }
+    }
+
+    IEnumerator Elevate()
+    {
+        Player.parent = gameObject.transform;
+        float elapsedTime = 0;
+        float waitTime = 3f;
+        Vector2 currentPos = transform.position;
+        Vector2 Gotoposition = new Vector2(transform.position.x, transform.position.y + 34);
+        while (elapsedTime < waitTime)
+        {
+            transform.position = Vector3.Lerp(currentPos, Gotoposition, (elapsedTime / waitTime));
+            elapsedTime += Time.deltaTime;
+
+
+            yield return null;
+        }
+        transform.position = Gotoposition;
+        Player.parent = null;
+        Indicator.color = new Color(0.98f, 0.34f, 0.16f);
+        yield return null;
+
     }
 }
