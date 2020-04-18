@@ -35,7 +35,7 @@ public class GenericSubTargetIK : GenericIK
 
 
             item.rotation = angle;
-            item.position = target - dir;
+            item.position = target - dir * item.lenght;
         }
     }
 

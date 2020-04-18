@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class ArmIK : GenericIK
+public class ArmIK : GenericSubTargetIK
 {
 
     public Transform Transf;
