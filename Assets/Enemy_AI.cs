@@ -109,8 +109,9 @@ public class Enemy_AI : MonoBehaviour
     IEnumerator Melee()
     {
         canmove = false;
+        animator.SetBool("Walk", false);
         animator.SetTrigger("Attack");
-        yield return new WaitForSeconds(2);
+        yield return new WaitForSeconds(1);
         canmove = true;
     }
     IEnumerator Attack()
@@ -126,12 +127,13 @@ public class Enemy_AI : MonoBehaviour
         hide = false;
 
     }
+
     IEnumerator Rotation()
     {
         rotation = true;
         canmove = false;
 
-        yield return new WaitForSeconds(Random.Range(0.7f, 1.3f));
+        yield return new WaitForSeconds(Random.Range(0.1f, 1.3f));
         //if (!playerinview)
         {
             animator.SetTrigger("Rotation");
