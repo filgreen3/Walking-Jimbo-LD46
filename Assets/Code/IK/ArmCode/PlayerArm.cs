@@ -2,6 +2,8 @@ using UnityEngine;
 
 public class PlayerArm : ArmIK
 {
+
+
     public Transform Clac1;
     public Transform Clac2;
 
@@ -15,6 +17,8 @@ public class PlayerArm : ArmIK
     public float Force;
 
     public Joint2D Connector;
+
+
 
 
     public const float maxMass = 2f;
@@ -67,7 +71,7 @@ public class PlayerArm : ArmIK
         {
 
             TakedObject = t[0].gameObject.GetComponent<Rigidbody2D>();
-
+            TakedObject.velocity = Vector3.zero;
 
             if (TakedObject.mass > maxMass)
             {
@@ -108,7 +112,8 @@ public class PlayerArm : ArmIK
         if (TakedObject != null)
         {
             TakedObject.gravityScale = 1f;
-            TakedObject.transform.SetParent(null);
+            if (TakedObject.mass <= maxMass)
+                TakedObject.transform.SetParent(null);
             TakedObject.velocity = ArmTarget.velocity * 1.2f;
 
             Connector.enabled = false;

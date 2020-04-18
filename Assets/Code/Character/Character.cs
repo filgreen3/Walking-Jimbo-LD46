@@ -28,12 +28,10 @@ public class Character : MonoBehaviour
 
 
     protected bool rotating;
+    protected virtual bool ExtraCoditionToRotate => true;
 
 
-    private void Update()
-    {
 
-    }
 
     protected virtual void FixedUpdate()
     {
@@ -45,7 +43,7 @@ public class Character : MonoBehaviour
         {
             Rig.AddForce(horiz * move * Vector2.right);
 
-            if (!rotating &&
+            if (!rotating && ExtraCoditionToRotate &&
             Mathf.Abs(Rig.velocity.x) > 4f &&
             (Rig.velocity.x > 0 && Transf.eulerAngles.y < 90 || Rig.velocity.x < 0 && Transf.eulerAngles.y > 90))
             {
