@@ -7,6 +7,7 @@ public class Enemy_AI : MonoBehaviour
     public bool melee = false;
     public float speed = 1f;
     public float distance = 10f;
+    public Rigidbody2D Body;
     Animator animator;
     bool Rdirection = true;
     bool canmove = true;
@@ -26,8 +27,10 @@ public class Enemy_AI : MonoBehaviour
 
     public void Dead()
     {
+        if (!enabled) return;
         animator.enabled = false;
         enabled = false;
+        Body.AddForce(Vector3.up * 1000f);
     }
 
 

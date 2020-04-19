@@ -280,7 +280,7 @@ Rigidbody2D:
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 0
-  m_Constraints: 0
+  m_Constraints: 4
 --- !u!61 &49035160
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -305,7 +305,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 0.02, y: 1.35}
+  m_Size: {x: 0.24, y: 1.35}
   m_EdgeRadius: 0
 --- !u!1 &61295540
 GameObject:
@@ -1674,7 +1674,7 @@ Rigidbody2D:
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 0
-  m_Constraints: 0
+  m_Constraints: 4
 --- !u!61 &1242184596
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -1699,7 +1699,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 0.02, y: 1.35}
+  m_Size: {x: 0.24, y: 1.35}
   m_EdgeRadius: 0
 --- !u!1 &1442469012
 GameObject:
@@ -1880,6 +1880,11 @@ PrefabInstance:
       propertyPath: m_Enabled
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 1107368991013209067, guid: ba9272f4df70143469ac040100cda3f6,
+        type: 3}
+      propertyPath: Body
+      value: 
+      objectReference: {fileID: 1732228750}
     - target: {fileID: 1107368991013209069, guid: ba9272f4df70143469ac040100cda3f6,
         type: 3}
       propertyPath: m_Name
