@@ -11,7 +11,7 @@ public class FolowCamera : MonoBehaviour
     [SerializeField] private float downBorder = 7;
     [SerializeField] private float upBorder = 20;
 
-    private float lerpTime;
+    private float lerpTime=.1f;
 
     public static Vector3 zeroPoint = Vector3.zero;
 
@@ -21,12 +21,12 @@ public class FolowCamera : MonoBehaviour
     void FixedUpdate()
     {
 
-        var pos = Vector3.Lerp(transform.position, objectToFolow.position + Offset, 0.55f);
+        /*var pos = Vector3.Lerp(transform.position, objectToFolow.position + Offset, 0.55f);
         pos.z = -10;
         pos.y = pos.y < downBorder ? downBorder : pos.y > upBorder ? upBorder : pos.y;
-        transform.position = pos;
-
-
+        transform.position = pos;*/
+        transform.position = Vector3.Lerp(transform.position, objectToFolow.position, lerpTime);
+        transform.position = new Vector3(transform.position.x, transform.position.y, -10);
     }
 
 
