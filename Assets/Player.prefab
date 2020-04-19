@@ -203,7 +203,7 @@ MonoBehaviour:
   SubIKTarget: {fileID: 4795393941225013032}
   LegSetting:
     serializedVersion: 2
-    m_Bits: 513
+    m_Bits: 769
   curve:
     serializedVersion: 2
     m_Curve:
@@ -298,7 +298,7 @@ MonoBehaviour:
   SubIKTarget: {fileID: 4795393941275024856}
   LegSetting:
     serializedVersion: 2
-    m_Bits: 513
+    m_Bits: 769
   curve:
     serializedVersion: 2
     m_Curve:
@@ -667,7 +667,7 @@ MonoBehaviour:
   SubIKTarget: {fileID: 4795393940909396694}
   LegSetting:
     serializedVersion: 2
-    m_Bits: 513
+    m_Bits: 769
   curve:
     serializedVersion: 2
     m_Curve:
@@ -874,7 +874,7 @@ MonoBehaviour:
   SubIKTarget: {fileID: 4795393940027039865}
   LegSetting:
     serializedVersion: 2
-    m_Bits: 513
+    m_Bits: 769
   curve:
     serializedVersion: 2
     m_Curve:
@@ -1295,7 +1295,7 @@ MonoBehaviour:
   - {fileID: 4795393940615425792}
   LegMask:
     serializedVersion: 2
-    m_Bits: 563
+    m_Bits: 819
   Rig: {fileID: 4644766298841020342}
   characterOffest: {x: 0, y: -1.5}
   CharacterOffestAddition: {x: 0, y: 0}

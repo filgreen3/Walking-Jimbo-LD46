@@ -44,7 +44,7 @@ public class Character : MonoBehaviour
             Rig.AddForce(horiz * move * Vector2.right);
 
             if (!rotating && ExtraCoditionToRotate &&
-            Mathf.Abs(Rig.velocity.x) > 4f &&
+            Mathf.Abs(Rig.velocity.x) > 1f &&
             (Rig.velocity.x > 0 && Transf.eulerAngles.y < 90 || Rig.velocity.x < 0 && Transf.eulerAngles.y > 90))
             {
                 rotating = true;
@@ -80,7 +80,7 @@ public class Character : MonoBehaviour
         {
             angle = Mathf.Lerp(angle, targAngle, t);
             Transf.eulerAngles = Vector3.up * angle;
-            t += 0.005f;
+            t += 0.01f;
             yield return waiter;
         }
 

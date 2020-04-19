@@ -9,7 +9,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7077139571100749940}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: detector
   m_TagString: Untagged
   m_Icon: {fileID: 2488908585195742037, guid: 0000000000000000d000000000000000, type: 0}
@@ -39,7 +39,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7077139571105105662}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: Weapon_holder
   m_TagString: Untagged
   m_Icon: {fileID: 2488908585195742037, guid: 0000000000000000d000000000000000, type: 0}
@@ -71,7 +71,7 @@ GameObject:
   m_Component:
   - component: {fileID: 7077139571508370206}
   - component: {fileID: 7077139571508370207}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: Sprites_03_16
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -158,7 +158,7 @@ GameObject:
   - component: {fileID: 1525329884}
   - component: {fileID: 1525329883}
   - component: {fileID: 1525329882}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: Enemy_corpse
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -353,7 +353,7 @@ GameObject:
   - component: {fileID: 1525329879}
   - component: {fileID: 1525329878}
   - component: {fileID: 1525329896}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: Enemy_Lleg
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -506,7 +506,7 @@ GameObject:
   m_Component:
   - component: {fileID: 7077139571574126592}
   - component: {fileID: 7077139571574126593}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: Enemy_2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -564,7 +564,7 @@ GameObject:
   - component: {fileID: 1525329881}
   - component: {fileID: 1525329880}
   - component: {fileID: 1525329897}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: Enemy_Hand
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -718,7 +718,7 @@ GameObject:
   m_Component:
   - component: {fileID: 7077139572381936791}
   - component: {fileID: 7077139572381936808}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: Sprites_-06_2 (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -803,7 +803,7 @@ GameObject:
   - component: {fileID: 1525329877}
   - component: {fileID: 1525329876}
   - component: {fileID: 1525329895}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: Enemy_Rleg
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -956,7 +956,7 @@ GameObject:
   m_Component:
   - component: {fileID: 7077139572655339366}
   - component: {fileID: 7077139572655339367}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: Enemy_Head
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1039,7 +1039,7 @@ GameObject:
   m_Component:
   - component: {fileID: 7077139572924317289}
   - component: {fileID: 7077139572924317290}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: Enemy_Eyes
   m_TagString: Untagged
   m_Icon: {fileID: 0}

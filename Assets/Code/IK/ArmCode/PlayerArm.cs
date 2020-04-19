@@ -84,6 +84,8 @@ public class PlayerArm : ArmIK
                 TakedObject.freezeRotation = true;
                 TakedObject.gravityScale = 0f;
                 TakedObject.transform.SetParent(RigTakeObj);
+                TakedObject.gameObject.layer = 13;
+
             }
         }
 
@@ -120,6 +122,8 @@ public class PlayerArm : ArmIK
             Connector.enabled = false;
             Connector.connectedBody = null;
             TakedObject.freezeRotation = false;
+            TakedObject.gameObject.layer = 8;
+
 
 
             TakedObject = null;
