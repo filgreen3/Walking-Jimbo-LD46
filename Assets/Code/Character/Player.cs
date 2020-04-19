@@ -27,13 +27,15 @@ public class Player : Character
     private void Start()
     {
         armTarget = Arm.targetObj.GetComponent<Rigidbody2D>();
+        prevVector = Arm.targetObj.localPosition;
     }
 
     protected override bool ExtraCoditionToRotate => Arm.TakedObject == null || Arm.TakedObject.mass < 1f;
 
 
 
-    private Vector3 prevVector = Vector3.zero;
+    private Vector3 prevVector;
+
     protected override void FixedUpdate()
     {
         base.FixedUpdate();
