@@ -54,12 +54,47 @@ public class Tutorial : MonoBehaviour
             {
                 if (canpress&&Input.GetKeyDown(KeyCode.D) && !D && !A && !W && !S)
                 {
-                    story = "Ok! It's works.\nNow use D to go right";
+                    story = "Now use A to go left";
                     StartCoroutine("PlayText");
                     D = true;
                 }
+                if (canpress&&Input.GetKeyDown(KeyCode.A) && D && !A && !W && !S)
+                {
+                    story = "Now use W to go up";
+                    StartCoroutine("PlayText");
+                    A = true;
+                }
+                if (canpress&&Input.GetKeyDown(KeyCode.W) && D && A && !W && !S)
+                {
+                    story = "Now use S to go down";
+                    StartCoroutine("PlayText");
+                    W = true;
+                }
+                if (canpress&&Input.GetKeyDown(KeyCode.S) && D && A && W && !S)
+                {
+                    story = "Now take that energy can";
+                    StartCoroutine("PlayText");
+                    S = true;
+                }
+
             }
         } 
+    }
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.gameObject.name== "Battery"&& canpress && D && A && W && S)
+        {
+            story = "Now put it down";
+            StartCoroutine("PlayText");
+        }
+    }    
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        if (collision.gameObject.name== "Battery"&& canpress && D && A && W && S)
+        {
+            story = "Now take that energy can";
+            StartCoroutine("PlayText");
+        }
     }
 }
 
