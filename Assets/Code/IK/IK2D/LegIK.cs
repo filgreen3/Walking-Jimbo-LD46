@@ -5,6 +5,8 @@ using UnityEngine;
 public class LegIK : GenericSubTargetIK
 {
 
+    public LayerMask LegSetting;
+
     public AnimationCurve curve;
     public float Speed;
     public bool ProcessState;
@@ -24,7 +26,7 @@ public class LegIK : GenericSubTargetIK
         {
             if (ProcessState) return savePoint;
 
-            var point = Physics2D.Raycast(targetObj.position, Vector2.down).point;
+            var point = Physics2D.Raycast(targetObj.position, Vector2.down, 2, LegSetting).point;
 
             if ((!ConnectedLeg.ProcessState && Mathf.Abs(point.x - savePoint.x) > defVlaue) ||
             Mathf.Abs(point.x - savePoint.x) > defVlaue * 1.5f)
