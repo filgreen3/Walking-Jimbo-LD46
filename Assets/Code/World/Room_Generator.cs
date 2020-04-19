@@ -18,7 +18,7 @@ public class Room_Generator : MonoBehaviour
         if (i == 0)
         {
 
-            Elevator.CurrentCRoom = Instantiate(Elevator.Croom[Random.Range(0, Elevator.Croom.Length)], new Vector2(0, transform.position.y+ 34), Quaternion.identity);
+            Elevator.CurrentCRoom = Instantiate(Elevator.Croom[Random.Range(0, Elevator.Croom.Length)], new Vector2(0, transform.position.y + 34), Quaternion.identity);
             Elevator.CurrentLRoom = Instantiate(Elevator.LroomB[Random.Range(0, Elevator.LroomB.Length)], new Vector2(-22.5f, transform.position.y + 34), Quaternion.identity);
             Elevator.CurrentRRoom = Instantiate(Elevator.Rroom[Random.Range(0, Elevator.Rroom.Length)], new Vector2(22.5f, transform.position.y + 34), Quaternion.identity);
         }
@@ -31,6 +31,12 @@ public class Room_Generator : MonoBehaviour
         Destroy(Ltodestroy);
         Destroy(Rtodestroy);
         Destroy(Ctodestroy);
+
+        var list = GameObject.FindObjectsOfType<Lever>();
+        foreach (var item in list)
+        {
+            item.OnLeverTurnOn.AddListener(Elevator.SetActive);
+        }
     }
     void Start()
     {
