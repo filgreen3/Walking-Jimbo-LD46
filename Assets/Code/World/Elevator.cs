@@ -61,4 +61,8 @@ public class Elevator : MonoBehaviour
         yield return null;
 
     }
+    public void SetActive()
+    {
+        Active = true;
+    }
 }
