@@ -125,11 +125,32 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8f0bf759760be0c44b015bdcdd0e07fb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Rroom: []
-  RroomB: []
-  Lroom: []
-  LroomB: []
-  Croom: []
+  Rroom:
+  - {fileID: 8710441807346889474, guid: 3bf722f58543e714f810b9c586d2e59b, type: 3}
+  - {fileID: 8710441807346889474, guid: 57737444583669f49b7e31d54fed44bb, type: 3}
+  - {fileID: 8710441807346889474, guid: 06c7252cb5112474ead67ddf85226012, type: 3}
+  - {fileID: 8710441807346889474, guid: 4c2b5125d54ee2b4e8a7fc840a0a9a22, type: 3}
+  - {fileID: 8710441807346889474, guid: c22348ea7e0f9b84e81ef7365d4dc8ef, type: 3}
+  RroomB:
+  - {fileID: 8710441807346889474, guid: 9c424e16f7d5e734ab10abbe260d1b13, type: 3}
+  - {fileID: 8710441807346889474, guid: a9da515f0a8f1204ca0292feaaa84866, type: 3}
+  - {fileID: 8710441807346889474, guid: ec1f9bb104523404990edd7d10dc070b, type: 3}
+  - {fileID: 8710441807346889474, guid: ae8047290c934a54bb860b49beb758b8, type: 3}
+  - {fileID: 8710441807346889474, guid: 51c763a9abecfa948a402f1eb949342c, type: 3}
+  Lroom:
+  - {fileID: 8759069769956677827, guid: 4b752ed937316334fa9a63f1b8aac1bf, type: 3}
+  - {fileID: 8759069769956677827, guid: aeaa9ee5c382374409fe632ef35c8ce8, type: 3}
+  - {fileID: 8759069769956677827, guid: 4c338478f4ed69f44946c39df9b5f0fe, type: 3}
+  - {fileID: 8759069769956677827, guid: 68a67a21463a6d24f9220b8b750b6cd1, type: 3}
+  - {fileID: 8759069769956677827, guid: d9a0226951040df4f861a444cbccdf04, type: 3}
+  LroomB:
+  - {fileID: 8759069769956677827, guid: 182fafa6b79b71f41a4733662b6774b3, type: 3}
+  - {fileID: 8759069769956677827, guid: a47014c4b33050046b8cfee491a94c57, type: 3}
+  - {fileID: 8759069769956677827, guid: af2180ce9a624e740b7e58843695a0a7, type: 3}
+  - {fileID: 8759069769956677827, guid: bb120acfcd6a64a458bac19e6879bb80, type: 3}
+  - {fileID: 8759069769956677827, guid: f32101bb6353b3d47b5036d4bfa4ae19, type: 3}
+  Croom:
+  - {fileID: 9046834921437250641, guid: 0aaf236303b26084b91dc7dbb74bce2d, type: 3}
   CurrentRRoom: {fileID: 0}
   CurrentLRoom: {fileID: 0}
   CurrentCRoom: {fileID: 0}
