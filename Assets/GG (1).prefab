@@ -971,6 +971,9 @@ MonoBehaviour:
   Transf: {fileID: 4423432672808409921}
   Arms:
   - {fileID: 0}
+  LegMask:
+    serializedVersion: 2
+    m_Bits: 2615
   Rig: {fileID: 4423432672808409926}
   characterOffest: {x: 0, y: -1.5}
   CharacterOffestAddition: {x: 0, y: 0}
@@ -979,6 +982,10 @@ MonoBehaviour:
   jump: 0.2
   rote: 52
   Arm: {fileID: 4583010357386445808}
+  ArmForce: 0
+  HitMask:
+    serializedVersion: 2
+    m_Bits: 0
 --- !u!231 &4583010356600528234
 SpringJoint2D:
   m_ObjectHideFlags: 0
@@ -2261,10 +2268,14 @@ MonoBehaviour:
   - transf: {fileID: 4423432672232424378}
     lenght: 1
   Active: 1
+  Weight: 0
+  SubIKTarget: {fileID: 0}
+  Transf: {fileID: 0}
   Clac1: {fileID: 4423432673285129830}
   Clac2: {fileID: 4423432672107795365}
   RigTakeObj: {fileID: 4423432672801455919}
   TakedObject: {fileID: 0}
+  ArmTarget: {fileID: 0}
   TakeMask:
     serializedVersion: 2
     m_Bits: 256
