@@ -23,7 +23,6 @@ public class Character : MonoBehaviour
     [SerializeField] private float rote = default;
 
 
-    float strange;
     float timeShift;
 
 
@@ -52,16 +51,16 @@ public class Character : MonoBehaviour
             }
 
         }
+        CharacterOffestAddition = Vector2.up * (1f + Input.GetAxis("Vertical") * jump);
 
 
-        var ray = Physics2D.Raycast(CharacterOffest + Rig.position, Vector2.down, 2, LegMask);
+        var ray = Physics2D.Raycast(CharacterOffest + Rig.position, Vector2.down, 6, LegMask);
 
         if (ray)
         {
-            strange = 1f - Mathf.Clamp01(ray.distance);
 
             var pos = Rig.position;
-            pos.y = ray.point.y + 2f;
+            pos.y = ray.point.y + 1f + CharacterOffestAddition.y;
             Rig.position = pos;
         }
     }
@@ -91,7 +90,6 @@ public class Character : MonoBehaviour
     void OnDrawGizmos()
     {
         Gizmos.color = Color.red;
-        Gizmos.DrawLine(characterOffest + Rig.position, Rig.position + Vector2.up * strange);
     }
 }
 

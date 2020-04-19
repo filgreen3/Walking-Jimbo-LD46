@@ -52,7 +52,7 @@ public class PlayerArm : ArmIK
             else
             {
                 TakedObject.transform.localPosition = Vector3.zero;
-                TakedObject.velocity /= ArmTarget.mass / TakedObject.mass;
+                TakedObject.velocity = (ArmTarget.position - TakedObject.position) * 10f;
             }
         }
 

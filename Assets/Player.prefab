@@ -2361,7 +2361,7 @@ MonoBehaviour:
   CharacterOffestAddition: {x: 0, y: 0}
   forceUp: 1.2
   move: 7
-  jump: 0.2
+  jump: 0.7
   rote: 25
   Arm: {fileID: 2699229891349291127}
   ArmForce: 3
@@ -2591,5 +2591,3 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4f3575ad8c9b76e4f8582dd687564589, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  player: {fileID: 0}
-  usageBattery: {fileID: 0}
