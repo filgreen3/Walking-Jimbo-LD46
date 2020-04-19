@@ -60,10 +60,6 @@ public class Character : MonoBehaviour
         {
             strange = 1f - Mathf.Clamp01(ray.distance);
 
-            if (!rotating)
-                Rig.rotation = Mathf.Atan2(ray.normal.y, ray.normal.x) * 57.2f - 90f;
-
-
             var pos = Rig.position;
             pos.y = ray.point.y + 2f;
             Rig.position = pos;

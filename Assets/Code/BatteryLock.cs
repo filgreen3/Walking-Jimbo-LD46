@@ -4,8 +4,8 @@ using UnityEngine;
 
 public class BatteryLock : MonoBehaviour
 {
-    [SerializeField] private Player player;
-    [SerializeField] private Battery usageBattery;
+    private Player player;
+    private Battery usageBattery;
 
 
     private void Update()
