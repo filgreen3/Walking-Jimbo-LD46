@@ -28,10 +28,16 @@ public class PlayerArm : ArmIK
     public override Vector2 IKTarget => (TakedObject != null && TakedObject.mass > maxMass) ? TakedObject.position : (Vector2)targetObj.position;
 
 
-    protected override void Update()
+    protected override void FixedUpdate()
     {
-        base.Update();
+        base.FixedUpdate();
 
+
+
+    }
+
+    private void Update()
+    {
         if (Input.GetMouseButtonDown(0))
             TakeItem();
 
@@ -48,18 +54,13 @@ public class PlayerArm : ArmIK
                 TakedObject.transform.localPosition = Vector3.zero;
                 TakedObject.velocity /= ArmTarget.mass / TakedObject.mass;
             }
-
-
         }
-
 
         if (Input.GetMouseButtonDown(1))
             TakedObject?.GetComponent<GenericItem>()?.Action(this);
 
 
-
     }
-
 
 
     public virtual void TakeItem()

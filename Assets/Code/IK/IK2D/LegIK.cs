@@ -47,9 +47,9 @@ public class LegIK : GenericSubTargetIK
         ProcessState = false;
     }
 
-    protected override void Update()
+    protected override void FixedUpdate()
     {
-        base.Update();
+        base.FixedUpdate();
 
         Bones[0].position = transform.position;
 

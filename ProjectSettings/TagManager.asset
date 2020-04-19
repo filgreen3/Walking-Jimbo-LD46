@@ -6,6 +6,8 @@ TagManager:
   tags:
   - Elevator
   - BattreyLock
+  - Chain
+  - Candy
   layers:
   - Default
   - TransparentFX
@@ -17,7 +19,10 @@ TagManager:
   - 
   - Item
   - Wall
+  - Rope
+  - Player
   - Unit
+  - 
   - 
   - 
   - 

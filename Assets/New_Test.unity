@@ -132,7 +132,7 @@ GameObject:
   - component: {fileID: 41302690}
   - component: {fileID: 41302689}
   - component: {fileID: 41302688}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Sprites_-06_4
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -594,7 +594,7 @@ GameObject:
   - component: {fileID: 378477922}
   - component: {fileID: 378477921}
   - component: {fileID: 378477920}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Square (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -916,7 +916,7 @@ GameObject:
   - component: {fileID: 723880581}
   - component: {fileID: 723880580}
   - component: {fileID: 723880579}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Square
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -936,7 +936,7 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
+  m_Offset: {x: 0, y: -0.0019047409}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -947,7 +947,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 1, y: 1}
+  m_Size: {x: 1, y: 0.99619055}
   m_EdgeRadius: 0
 --- !u!212 &723880580
 SpriteRenderer:
@@ -2350,7 +2350,12 @@ PrefabInstance:
     - target: {fileID: 4644766298841020336, guid: 1859bf8345808d542b75e09c5caa78a0,
         type: 3}
       propertyPath: HitMask.m_Bits
-      value: 567
+      value: 528
+      objectReference: {fileID: 0}
+    - target: {fileID: 4644766298841020336, guid: 1859bf8345808d542b75e09c5caa78a0,
+        type: 3}
+      propertyPath: LegMask.m_Bits
+      value: 563
       objectReference: {fileID: 0}
     - target: {fileID: 4644766298841020337, guid: 1859bf8345808d542b75e09c5caa78a0,
         type: 3}
@@ -2422,6 +2427,11 @@ PrefabInstance:
       propertyPath: m_Layer
       value: 10
       objectReference: {fileID: 0}
+    - target: {fileID: 4644766298850071518, guid: 1859bf8345808d542b75e09c5caa78a0,
+        type: 3}
+      propertyPath: m_Color.a
+      value: 0.043137256
+      objectReference: {fileID: 0}
     - target: {fileID: 4795393939475243502, guid: 1859bf8345808d542b75e09c5caa78a0,
         type: 3}
       propertyPath: m_Layer
@@ -2476,6 +2486,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Layer
       value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 4795393940615425792, guid: 1859bf8345808d542b75e09c5caa78a0,
+        type: 3}
+      propertyPath: TakeMask.m_Bits
+      value: 256
       objectReference: {fileID: 0}
     - target: {fileID: 4795393940615425794, guid: 1859bf8345808d542b75e09c5caa78a0,
         type: 3}
@@ -2537,5 +2552,6 @@ PrefabInstance:
       propertyPath: m_Layer
       value: 10
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 4795393939607642006, guid: 1859bf8345808d542b75e09c5caa78a0, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 1859bf8345808d542b75e09c5caa78a0, type: 3}

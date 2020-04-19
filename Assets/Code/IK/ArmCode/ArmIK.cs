@@ -14,9 +14,9 @@ public class ArmIK : GenericSubTargetIK
         Transf = transform;
     }
 
-    protected override void Update()
+    protected override void FixedUpdate()
     {
-        base.Update();
+        base.FixedUpdate();
 
 
         Bones[0].position = transform.position;

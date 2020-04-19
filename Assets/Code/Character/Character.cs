@@ -52,7 +52,6 @@ public class Character : MonoBehaviour
             }
 
         }
-        CharacterOffestAddition = Input.GetAxis("Vertical") * characterOffest * jump;
 
 
         var ray = Physics2D.Raycast(CharacterOffest + Rig.position, Vector2.down, 2, LegMask);
@@ -63,10 +62,13 @@ public class Character : MonoBehaviour
 
             if (!rotating)
                 Rig.rotation = Mathf.Atan2(ray.normal.y, ray.normal.x) * 57.2f - 90f;
-            Rig.AddForce(Vector2.up * 9.81f * strange * strange * forceUp);
+
+
+            var pos = Rig.position;
+            pos.y = ray.point.y + 2f;
+            Rig.position = pos;
         }
     }
-
 
     protected IEnumerator TurnAround(float targAngle)
     {

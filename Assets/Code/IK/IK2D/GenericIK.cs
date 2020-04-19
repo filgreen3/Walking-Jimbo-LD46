@@ -14,7 +14,7 @@ public abstract class GenericIK : MonoBehaviour
 
     public virtual Vector2 IKTarget => targetObj.position;
 
-    protected virtual void Update()
+    protected virtual void FixedUpdate()
     {
         if (!Active) return;
         for (int i = Bones.Count - 1; i >= 0; i--)

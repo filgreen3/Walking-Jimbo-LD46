@@ -8,7 +8,7 @@ public class GenericSubTargetIK : GenericIK
     public float Weight;
     public Transform SubIKTarget;
 
-    protected override void Update()
+    protected override void FixedUpdate()
     {
         if (!Active) return;
         for (int i = Bones.Count - 1; i >= 0; i--)
