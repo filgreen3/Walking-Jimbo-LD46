@@ -21,7 +21,7 @@ public class PlayerArm : ArmIK
 
 
 
-    public const float maxMass = 2f;
+    public const float maxMass = 1f;
 
 
 
