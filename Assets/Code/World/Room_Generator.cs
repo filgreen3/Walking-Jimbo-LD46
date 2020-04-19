@@ -48,4 +48,7 @@ public class Room_Generator : MonoBehaviour
         if (collision.gameObject.tag == "Elevator")
             Generate();
     }
+
+    
+
 }
