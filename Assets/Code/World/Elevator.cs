@@ -43,6 +43,7 @@ public class Elevator : MonoBehaviour
     IEnumerator Elevate()
     {
         Player.parent = gameObject.transform;
+        Player.gameObject.GetComponent<Rigidbody2D>().bodyType = RigidbodyType2D.Kinematic;
         float elapsedTime = 0;
         float waitTime = 3f;
         Vector2 currentPos = transform.position;
@@ -57,6 +58,7 @@ public class Elevator : MonoBehaviour
         }
         transform.position = Gotoposition;
         Player.parent = null;
+        Player.gameObject.GetComponent<Rigidbody2D>().bodyType = RigidbodyType2D.Dynamic;
         Indicator.color = new Color(0.98f, 0.34f, 0.16f);
         yield return null;
 
