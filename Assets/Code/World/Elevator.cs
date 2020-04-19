@@ -16,14 +16,14 @@ public class Elevator : MonoBehaviour
     public GameObject CurrentCRoom;
 
     Transform Player;
-    SpriteRenderer Indicator;
+    public SpriteRenderer Indicator;
 
     public bool Active = false;
 
     private void Start()
     {
         Player = GameObject.FindGameObjectWithTag("Player").transform;
-        Indicator = gameObject.transform.Find("Indicator").gameObject.GetComponent<SpriteRenderer>();
+        //Indicator = gameObject.transform.Find("Indicator").gameObject.GetComponent<SpriteRenderer>();
 
     }
     private void Update()

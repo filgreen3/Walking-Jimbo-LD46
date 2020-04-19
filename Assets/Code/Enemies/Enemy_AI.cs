@@ -25,13 +25,14 @@ public class Enemy_AI : MonoBehaviour
 
 
     Animator animator;
-    bool Rdirection = true;
-    bool canmove = true;
+    public bool Rdirection = true;
+    public bool canmove = true;
     Transform detector;
     bool playerinview = false;
     bool hide = false;
     bool rotation = false;
     Transform player;
+    public bool dead = false;
 
     void Start()
     {
@@ -39,18 +40,28 @@ public class Enemy_AI : MonoBehaviour
         detector = transform.Find("detector").transform;
         animator.SetFloat("ASpeed", Random.Range(0.7f, 1.3f));
         speed = animator.GetFloat("ASpeed");
+        Body.bodyType = RigidbodyType2D.Kinematic;
+        Hand.bodyType = RigidbodyType2D.Kinematic;
+        Leg1.bodyType = RigidbodyType2D.Kinematic;
+        Leg2.bodyType = RigidbodyType2D.Kinematic;
     }
 
     public void Dead()
     {
         if (!enabled) return;
-
+        dead = true;
         Hand.freezeRotation = false;
         Leg1.freezeRotation = false;
         Leg2.freezeRotation = false;
 
+        Body.bodyType = RigidbodyType2D.Dynamic;
+        Hand.bodyType = RigidbodyType2D.Dynamic;
+        Leg1.bodyType = RigidbodyType2D.Dynamic;
+        Leg2.bodyType = RigidbodyType2D.Dynamic;
+
         Eye1Rendered.sprite = DeadEye;
         Eye2Rendered.sprite = DeadEye;
+        Eye2Rendered.color = Color.white;
 
         animator.enabled = false;
         enabled = false;
@@ -61,7 +72,7 @@ public class Enemy_AI : MonoBehaviour
     void FixedUpdate()
     {
 
-        if (!playerinview)
+        if (!playerinview&& detector!=null)
         {
             RaycastHit2D detection = Physics2D.Raycast
                     (detector.position,
@@ -166,7 +177,7 @@ public class Enemy_AI : MonoBehaviour
     {
         rotation = true;
         canmove = false;
-
+        Body.gameObject.transform.localPosition = new Vector2(0.043701f, 1.7634f);
         yield return new WaitForSeconds(Random.Range(0.1f, 1.3f));
         //if (!playerinview)
         {

@@ -154,6 +154,7 @@ MonoBehaviour:
   CurrentRRoom: {fileID: 0}
   CurrentLRoom: {fileID: 0}
   CurrentCRoom: {fileID: 0}
+  Indicator: {fileID: 8107891705649852053}
   Active: 0
 --- !u!50 &8745594203291968467
 Rigidbody2D:

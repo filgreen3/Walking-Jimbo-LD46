@@ -1,7 +1,6 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine;
 
 public class Tutorial : MonoBehaviour
 {
@@ -13,6 +12,7 @@ public class Tutorial : MonoBehaviour
     int timer=0;
     bool canpress=false;
     public TextMesh txt;
+    public Enemy_AI Enemy; 
     string story;
 
     void Awake()
@@ -33,14 +33,12 @@ public class Tutorial : MonoBehaviour
         }
         canpress = true;
     }
-    void Start()
-    {
-        
-    }
+
 
     // Update is called once per frame
     void Update()
     {
+        if (Enemy.dead) Destroy(gameObject);
         if (timer < 100) timer++;
         else
         {
@@ -72,7 +70,7 @@ public class Tutorial : MonoBehaviour
                 }
                 if (canpress&&Input.GetKeyDown(KeyCode.S) && D && A && W && !S)
                 {
-                    story = "Now take that energy can";
+                    story = "Now take that energy can.\nUse E.\nBe careful with the lamp!";
                     StartCoroutine("PlayText");
                     S = true;
                 }

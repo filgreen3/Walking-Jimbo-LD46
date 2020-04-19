@@ -13,7 +13,7 @@ public class Room_Generator : MonoBehaviour
         GameObject Rtodestroy = Elevator.CurrentRRoom;
         GameObject Ctodestroy = Elevator.CurrentCRoom;
 
-        int i = Random.Range(0, 1);
+        int i = Random.Range(0, 2);
 
         if (i == 0)
         {
