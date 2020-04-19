@@ -7,7 +7,23 @@ public class Enemy_AI : MonoBehaviour
     public bool melee = false;
     public float speed = 1f;
     public float distance = 10f;
+
+
+    [Header("Body Setting")]
     public Rigidbody2D Body;
+    public Rigidbody2D Hand;
+    public Rigidbody2D Leg1;
+    public Rigidbody2D Leg2;
+
+
+    [Header("Eye Setting")]
+    public Sprite DeadEye;
+
+    public SpriteRenderer Eye1Rendered;
+    public SpriteRenderer Eye2Rendered;
+
+
+
     Animator animator;
     bool Rdirection = true;
     bool canmove = true;
@@ -28,6 +44,14 @@ public class Enemy_AI : MonoBehaviour
     public void Dead()
     {
         if (!enabled) return;
+
+        Hand.freezeRotation = false;
+        Leg1.freezeRotation = false;
+        Leg2.freezeRotation = false;
+
+        Eye1Rendered.sprite = DeadEye;
+        Eye2Rendered.sprite = DeadEye;
+
         animator.enabled = false;
         enabled = false;
         Body.AddForce(Vector3.up * 1000f);
