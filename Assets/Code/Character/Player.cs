@@ -12,7 +12,7 @@ public class Player : Character
 
     private Rigidbody2D armTarget;
 
-    private bool armActive = true;
+    private bool armActive = false;
 
 
     public virtual Vector3 LookPoint { get => WorldManager.WorldLookPoint; }

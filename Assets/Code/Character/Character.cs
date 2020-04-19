@@ -80,7 +80,7 @@ public class Character : MonoBehaviour
         {
             angle = Mathf.Lerp(angle, targAngle, t);
             Transf.eulerAngles = Vector3.up * angle;
-            t += 0.01f;
+            t += 0.05f;
             yield return waiter;
         }
 
