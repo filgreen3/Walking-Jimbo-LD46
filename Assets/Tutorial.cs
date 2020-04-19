@@ -14,10 +14,13 @@ public class Tutorial : MonoBehaviour
     public TextMesh txt;
     public Enemy_AI Enemy; 
     string story;
+    public AudioClip sound;
+    AudioSource audio;
 
     void Awake()
     {
         txt = txt.GetComponent<TextMesh>();
+        audio = GetComponent<AudioSource>();
         story = txt.text;
         txt.text = "";
     }
@@ -29,6 +32,8 @@ public class Tutorial : MonoBehaviour
         foreach (char c in story)
         {
             txt.text += c;
+            audio.PlayOneShot(sound);
+            audio.pitch = Random.Range(1, 2.1f);
             yield return new WaitForSeconds(0.025f);
         }
         canpress = true;
@@ -45,32 +50,32 @@ public class Tutorial : MonoBehaviour
             if (timer == 100)
             {
                 timer++;
-                story = "Ok! It's works.\nNow use D to go right";
+                story = "Ok! It's works.\nNow use W to go up";
                 StartCoroutine("PlayText");
             }
             else
             {
-                if (canpress&&Input.GetKeyDown(KeyCode.D) && !D && !A && !W && !S)
+                if (canpress&&Input.GetKeyDown(KeyCode.W) && !W && !A && !D && !S)
                 {
                     story = "Now use A to go left";
                     StartCoroutine("PlayText");
-                    D = true;
+                    W = true;
                 }
-                if (canpress&&Input.GetKeyDown(KeyCode.A) && D && !A && !W && !S)
+                if (canpress&&Input.GetKeyDown(KeyCode.A) && W && !A && !D && !S)
                 {
-                    story = "Now use W to go up";
+                    story = "Now use D to go right";
                     StartCoroutine("PlayText");
                     A = true;
                 }
-                if (canpress&&Input.GetKeyDown(KeyCode.W) && D && A && !W && !S)
+                if (canpress&&Input.GetKeyDown(KeyCode.D) && W && A && !D && !S)
                 {
                     story = "Now use S to go down";
                     StartCoroutine("PlayText");
-                    W = true;
+                    D = true;
                 }
                 if (canpress&&Input.GetKeyDown(KeyCode.S) && D && A && W && !S)
                 {
-                    story = "Now take that energy can.\nUse E.\nBe careful with the lamp!";
+                    story = "Now pick up that energy can.\nUse E.\nBe careful with the lamp!";
                     StartCoroutine("PlayText");
                     S = true;
                 }
@@ -90,7 +95,7 @@ public class Tutorial : MonoBehaviour
     {
         if (collision.gameObject.name== "Battery"&& canpress && D && A && W && S)
         {
-            story = "Now take that energy can";
+            story = "Now lift that energy can\nover yourself";
             StartCoroutine("PlayText");
         }
     }

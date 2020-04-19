@@ -59,6 +59,13 @@ public class Enemy_AI : MonoBehaviour
         Leg1.bodyType = RigidbodyType2D.Dynamic;
         Leg2.bodyType = RigidbodyType2D.Dynamic;
 
+        Body.gameObject.layer = 12;
+        Hand.gameObject.GetComponent<BoxCollider2D>().enabled=true;
+        Leg1.gameObject.GetComponent<BoxCollider2D>().enabled=true;
+        Leg2.gameObject.GetComponent<BoxCollider2D>().enabled=true;
+        //Leg1.gameObject.layer = 12;
+        //Leg2.gameObject.layer = 12;
+
         Eye1Rendered.sprite = DeadEye;
         Eye2Rendered.sprite = DeadEye;
         Eye2Rendered.color = Color.white;

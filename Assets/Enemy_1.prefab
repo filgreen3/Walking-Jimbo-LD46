@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 1107368989330362326}
   - component: {fileID: 1107368989330362327}
   - component: {fileID: 1107368989330362324}
-  m_Layer: 12
+  m_Layer: 0
   m_Name: Pistol
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -109,7 +109,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1107368989453322747}
   - component: {fileID: 1107368989453322744}
-  m_Layer: 12
+  m_Layer: 0
   m_Name: Sprites_03_20
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -191,7 +191,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1107368989506860274}
   - component: {fileID: 1107368989506860275}
-  m_Layer: 12
+  m_Layer: 0
   m_Name: Sprites_-06_2 (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -273,7 +273,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1107368989751529000}
   - component: {fileID: 1107368989751529001}
-  m_Layer: 12
+  m_Layer: 0
   m_Name: Enemy_Head
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -361,7 +361,7 @@ GameObject:
   - component: {fileID: 1732228750}
   - component: {fileID: 1732228751}
   - component: {fileID: 1732228752}
-  m_Layer: 12
+  m_Layer: 0
   m_Name: Enemy_corpse
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -556,7 +556,7 @@ GameObject:
   - component: {fileID: 49035159}
   - component: {fileID: 49035160}
   - component: {fileID: 49035158}
-  m_Layer: 12
+  m_Layer: 0
   m_Name: Enemy_Lleg
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -656,7 +656,7 @@ BoxCollider2D:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1107368989991025454}
-  m_Enabled: 1
+  m_Enabled: 0
   m_Density: 1
   m_Material: {fileID: 0}
   m_IsTrigger: 0
@@ -688,9 +688,9 @@ HingeJoint2D:
   m_ConnectedRigidBody: {fileID: 1732228750}
   m_BreakForce: Infinity
   m_BreakTorque: Infinity
-  m_AutoConfigureConnectedAnchor: 1
+  m_AutoConfigureConnectedAnchor: 0
   m_Anchor: {x: 0, y: 0}
-  m_ConnectedAnchor: {x: -0.50152016, y: -0.6265812}
+  m_ConnectedAnchor: {x: -0.5015216, y: -0.62658143}
   m_UseMotor: 0
   m_Motor:
     m_MotorSpeed: 0
@@ -708,7 +708,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1107368990123852601}
-  m_Layer: 12
+  m_Layer: 0
   m_Name: detector
   m_TagString: Untagged
   m_Icon: {fileID: 2488908585195742037, guid: 0000000000000000d000000000000000, type: 0}
@@ -739,7 +739,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1107368990227622966}
   - component: {fileID: 1107368990227622967}
-  m_Layer: 12
+  m_Layer: 0
   m_Name: Enemy_Eyes
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -821,7 +821,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1107368990433579549}
-  m_Layer: 12
+  m_Layer: 0
   m_Name: Weapon_holder
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -856,7 +856,7 @@ GameObject:
   - component: {fileID: 862395388}
   - component: {fileID: 862395389}
   - component: {fileID: 862395387}
-  m_Layer: 12
+  m_Layer: 0
   m_Name: Enemy_Hand
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -957,7 +957,7 @@ BoxCollider2D:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1107368990751537448}
-  m_Enabled: 1
+  m_Enabled: 0
   m_Density: 1
   m_Material: {fileID: 0}
   m_IsTrigger: 0
@@ -989,9 +989,9 @@ HingeJoint2D:
   m_ConnectedRigidBody: {fileID: 1732228750}
   m_BreakForce: Infinity
   m_BreakTorque: Infinity
-  m_AutoConfigureConnectedAnchor: 1
+  m_AutoConfigureConnectedAnchor: 0
   m_Anchor: {x: 0, y: 0}
-  m_ConnectedAnchor: {x: 0.6710644, y: -0.016288757}
+  m_ConnectedAnchor: {x: 0.6710644, y: -0.016288996}
   m_UseMotor: 0
   m_Motor:
     m_MotorSpeed: 0
@@ -1010,7 +1010,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1107368991013209066}
   - component: {fileID: 1107368991013209067}
-  m_Layer: 12
+  m_Layer: 0
   m_Name: Enemy_1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1072,7 +1072,7 @@ GameObject:
   - component: {fileID: 1242184595}
   - component: {fileID: 1242184596}
   - component: {fileID: 1242184594}
-  m_Layer: 12
+  m_Layer: 0
   m_Name: Enemy_Rleg
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1172,7 +1172,7 @@ BoxCollider2D:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1107368991077441928}
-  m_Enabled: 1
+  m_Enabled: 0
   m_Density: 1
   m_Material: {fileID: 0}
   m_IsTrigger: 0
@@ -1204,9 +1204,9 @@ HingeJoint2D:
   m_ConnectedRigidBody: {fileID: 1732228750}
   m_BreakForce: Infinity
   m_BreakTorque: Infinity
-  m_AutoConfigureConnectedAnchor: 1
+  m_AutoConfigureConnectedAnchor: 0
   m_Anchor: {x: 0, y: 0}
-  m_ConnectedAnchor: {x: 0.45106506, y: -0.6265812}
+  m_ConnectedAnchor: {x: 0.4510646, y: -0.62658143}
   m_UseMotor: 0
   m_Motor:
     m_MotorSpeed: 0
