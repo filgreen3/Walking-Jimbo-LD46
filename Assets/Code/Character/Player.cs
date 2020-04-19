@@ -12,10 +12,16 @@ public class Player : Character
 
     private Rigidbody2D armTarget;
 
+    private bool armActive = true;
 
 
     public virtual Vector3 LookPoint { get => WorldManager.WorldLookPoint; }
 
+    private void Update()
+    {
+        if (Input.GetKeyDown(KeyCode.E))
+            armActive = !armActive;
+    }
 
 
     private void Start()
@@ -25,27 +31,40 @@ public class Player : Character
 
     protected override bool ExtraCoditionToRotate => Arm.TakedObject == null || Arm.TakedObject.mass < 1f;
 
-    private RaycastHit2D[] hit = new RaycastHit2D[1];
 
+
+    private Vector3 prevVector = Vector3.zero;
     protected override void FixedUpdate()
     {
         base.FixedUpdate();
 
         var armTr = Arm.Transf;
-        var maxDist = 5f;
 
-
-        if (Physics2D.RaycastNonAlloc(armTr.position, LookPoint - armTr.position, hit, 5f, HitMask) > 0)
+        if (armActive)
         {
-            maxDist = hit[0].distance;
+
+            var maxDist = 5f;
+            var ray = Physics2D.Raycast(armTr.position, LookPoint - armTr.position, 5f, HitMask);
+
+
+            if (ray)
+            {
+                maxDist = ray.distance;
+            }
+
+            var t = Vector2.ClampMagnitude(LookPoint - armTr.position, maxDist) + (Vector2)(armTr.position);
+            t = (t - armTarget.position) * ArmForce;
+
+            armTarget.velocity = Vector2.ClampMagnitude(t * t.magnitude, 15f);
+
+            prevVector = armTarget.transform.localPosition;
+
         }
+        else
+        {
+            armTarget.transform.localPosition = prevVector;
 
-        var t = Vector2.ClampMagnitude(LookPoint - armTr.position, maxDist) + (Vector2)(armTr.position);
-        t = (t - armTarget.position) * ArmForce;
-        armTarget.velocity = t * t.magnitude;
-
-
-        //if (!rotating && Rig.velocity.magnitude < 1f && Mathf.Abs(armTarget.position.x - Transf.position.x) > 1f)
-        //    StartCoroutine(TurnAround(armTarget.position.x - Transf.position.x > 0 ? 180 : 0));
+        }
     }
+
 }
