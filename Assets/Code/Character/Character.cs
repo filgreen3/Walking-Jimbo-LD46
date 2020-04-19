@@ -63,13 +63,10 @@ public class Character : MonoBehaviour
 
             if (!rotating)
                 Rig.rotation = Mathf.Atan2(ray.normal.y, ray.normal.x) * 57.2f - 90f;
-
-
-            var pos = Transf.position;
-            pos.y = ray.point.y + 2f;
-            Transf.position = pos;
+            Rig.AddForce(Vector2.up * 9.81f * strange * strange * forceUp);
         }
     }
+
 
     protected IEnumerator TurnAround(float targAngle)
     {
