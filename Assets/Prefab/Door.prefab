@@ -94,7 +94,7 @@ GameObject:
   - component: {fileID: 1393353268048988816}
   - component: {fileID: 2115871453289523242}
   - component: {fileID: -2376413757705251823}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Door
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -109,7 +109,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5147859484976690378}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 1.6100003, y: -3.3966115, z: 0}
+  m_LocalPosition: {x: 1.38, y: -3.3966115, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 5147859484989608374}
@@ -131,6 +131,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Door1: {fileID: 5147859484989608375}
   Door2: {fileID: 5147859485196784442}
+  touched: 0
 --- !u!61 &2115871453289523242
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -141,10 +142,10 @@ BoxCollider2D:
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0.05, y: 2.6942246}
+  m_Offset: {x: 0.049999997, y: 0.021112442}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0, y: 0}
@@ -155,7 +156,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 0.48, y: 5.234857}
+  m_Size: {x: 0.48, y: 5.311451}
   m_EdgeRadius: 0
 --- !u!50 &-2376413757705251823
 Rigidbody2D:
@@ -165,7 +166,7 @@ Rigidbody2D:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5147859484976690378}
-  m_BodyType: 0
+  m_BodyType: 1
   m_Simulated: 1
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
@@ -203,7 +204,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5147859484989608375}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0.062468886, y: 2.73, z: 0}
+  m_LocalPosition: {x: -0.02, y: 0, z: 0}
   m_LocalScale: {x: 0.206, y: 2.358, z: 1}
   m_Children:
   - {fileID: 5147859483720946839}
@@ -288,7 +289,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5147859485196784442}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -1.1856047, y: 2.722459, z: 0}
+  m_LocalPosition: {x: -1.2680736, y: 0, z: 0}
   m_LocalScale: {x: 1.151, y: 2.358, z: 1}
   m_Children:
   - {fileID: 5147859485491287791}
