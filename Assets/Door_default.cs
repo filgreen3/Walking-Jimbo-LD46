@@ -7,7 +7,12 @@ public class Door_default : MonoBehaviour
     public GameObject Door1;
     public GameObject Door2;
     public bool touched = false;
+    Vector2 position;
 
+    private void Start()
+    {
+        position = transform.position;
+    }
     private void OnTriggerEnter2D(Collider2D collision)
     {
 
@@ -16,7 +21,7 @@ public class Door_default : MonoBehaviour
             if (!touched)
             {
                 touched = true;
-                if (collision.gameObject.GetComponent<Rigidbody2D>().velocity.x < 2f && collision.gameObject.GetComponent<Rigidbody2D>().velocity.x > -2)
+                if (transform.position.x<position.x+1&& transform.position.x > position.x - 1&&collision.gameObject.GetComponent<Rigidbody2D>().velocity.x < 2f && collision.gameObject.GetComponent<Rigidbody2D>().velocity.x > -2)
                 {
 
                     GetComponent<Rigidbody2D>().bodyType = RigidbodyType2D.Static;
