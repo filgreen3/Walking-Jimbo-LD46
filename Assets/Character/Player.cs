@@ -15,6 +15,14 @@ public class Player : Character
     private bool armActive = false;
 
 
+    [Header("EnergySetting")]
+    public Battery PlayerBattery;
+
+    [Range(0, 0.1f)]
+    public float ArmEnergyConsume, MoveEnergyConsume;
+
+
+
     public virtual Vector3 LookPoint { get => WorldManager.WorldLookPoint; }
 
     private void Update()
@@ -67,6 +75,29 @@ public class Player : Character
             armTarget.transform.localPosition = prevVector;
 
         }
+        UpdateEnergyConsume();
     }
+
+
+    void UpdateEnergyConsume()
+    {
+        if (PlayerBattery == null) return;
+
+
+        if (Input.GetAxis("Horizontal") != 0 || Input.GetAxis("Vertical") != 0)
+        {
+            PlayerBattery.Energy -= MoveEnergyConsume / 60f;
+        }
+        if (armActive)
+        {
+            PlayerBattery.Energy -= ArmEnergyConsume / 60f;
+        }
+
+        if (PlayerBattery.Energy <= 0)
+            WorldManager.Instance.EndEnergyMoment();
+        WorldManager.Instance.EnergySlider.value = PlayerBattery.Energy;
+
+    }
+
 
 }

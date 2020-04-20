@@ -2,7 +2,13 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public abstract class GenericItem : MonoBehaviour
+public class GenericItem : MonoBehaviour
 {
-    public abstract void Action(PlayerArm arm);
+    public virtual void Action(PlayerArm arm) { }
+    public void Drop()
+    {
+        gameObject.layer = 8;
+        GetComponent<Rigidbody2D>().bodyType = RigidbodyType2D.Dynamic;
+        GetComponent<Joint2D>().enabled = false;
+    }
 }

@@ -4,10 +4,11 @@ using UnityEngine;
 
 public class Battery : GenericItem
 {
-    
-    private void Start()=>Transf=transform;
+
+    private void Start() => Transf = transform;
     public Transform Transf;
 
+    public float Energy = 1;
 
     public override void Action(PlayerArm arm)
     {

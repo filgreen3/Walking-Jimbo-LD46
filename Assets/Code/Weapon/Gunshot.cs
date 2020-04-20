@@ -6,18 +6,44 @@ public class Gunshot : GenericItem
 {
     [SerializeField] private GameObject fire;
     [SerializeField] private GameObject bullet;
+    [SerializeField] private GameObject bulletShell;
+
     [SerializeField] private float force;
 
 
-    public override void Action(PlayerArm arm) => Shot();
+    [Header("Audio")]
+    [SerializeField] private AudioSource audioSource;
+    [SerializeField] private AudioClip fireSound;
+    [SerializeField] private AudioClip outOfAmmoSound;
+
+
+
+
+    public float Ammo = 3;
+
+    public override void Action(PlayerArm arm)
+    {
+        if (Ammo > 0)
+        {
+            Ammo--;
+            Shot();
+        }
+        else
+        {
+            audioSource.PlayOneShot(outOfAmmoSound);
+        }
+    }
 
     public void Shot()
     {
+        audioSource.PlayOneShot(fireSound);
+        Instantiate(bulletShell, transform.position + transform.up, Quaternion.identity).GetComponent<Rigidbody2D>().AddForce(transform.up * force / 10f);
+        Instantiate(bullet, transform.position + transform.right, Quaternion.identity).GetComponent<Rigidbody2D>().AddForce(transform.right * force);
         StartCoroutine(Attack());
     }
     IEnumerator Attack()
     {
-        Instantiate(bullet, transform.position + transform.right, Quaternion.identity).GetComponent<Rigidbody2D>().AddForce(transform.right * force);
+
         fire.SetActive(true);
         yield return new WaitForSeconds(.1f);
         fire.SetActive(false);

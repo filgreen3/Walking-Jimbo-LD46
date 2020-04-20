@@ -1058,7 +1058,7 @@ MonoBehaviour:
   TakeMask:
     serializedVersion: 2
     m_Bits: 256
-  Force: 1
+  Force: 4
   Connector: {fileID: 4795393939846312346}
 --- !u!1 &4644766297012544667
 GameObject:
@@ -1263,7 +1263,7 @@ MonoBehaviour:
   SubIKTarget: {fileID: 2699229890733551711}
   LegSetting:
     serializedVersion: 2
-    m_Bits: 513
+    m_Bits: 769
   curve:
     serializedVersion: 2
     m_Curve:
@@ -1298,7 +1298,7 @@ MonoBehaviour:
     m_PostInfinity: 2
     m_RotationOrder: 4
   Speed: 2.6
-  ProcessState: 0
+  ProcessState: 1
   ConnectedLeg: {fileID: 4644766297442307414}
 --- !u!1 &4644766297442307415
 GameObject:
@@ -1358,7 +1358,7 @@ MonoBehaviour:
   SubIKTarget: {fileID: 2699229890784187055}
   LegSetting:
     serializedVersion: 2
-    m_Bits: 513
+    m_Bits: 769
   curve:
     serializedVersion: 2
     m_Curve:
@@ -1393,7 +1393,7 @@ MonoBehaviour:
     m_PostInfinity: 2
     m_RotationOrder: 4
   Speed: 2.6
-  ProcessState: 0
+  ProcessState: 1
   ConnectedLeg: {fileID: 4644766297285431356}
 --- !u!1 &4644766297548491962
 GameObject:
@@ -1727,7 +1727,7 @@ MonoBehaviour:
   SubIKTarget: {fileID: 2699229891089128865}
   LegSetting:
     serializedVersion: 2
-    m_Bits: 513
+    m_Bits: 769
   curve:
     serializedVersion: 2
     m_Curve:
@@ -1762,7 +1762,7 @@ MonoBehaviour:
     m_PostInfinity: 2
     m_RotationOrder: 4
   Speed: 2.6
-  ProcessState: 0
+  ProcessState: 1
   ConnectedLeg: {fileID: 4644766298345778654}
 --- !u!1 &4644766298360883863
 GameObject:
@@ -1934,7 +1934,7 @@ MonoBehaviour:
   SubIKTarget: {fileID: 2699229889819815694}
   LegSetting:
     serializedVersion: 2
-    m_Bits: 513
+    m_Bits: 769
   curve:
     serializedVersion: 2
     m_Curve:
@@ -1969,7 +1969,7 @@ MonoBehaviour:
     m_PostInfinity: 2
     m_RotationOrder: 4
   Speed: 2.6
-  ProcessState: 0
+  ProcessState: 1
   ConnectedLeg: {fileID: 4644766298345778654}
 --- !u!1 &4644766298596091979
 GameObject:
@@ -2215,7 +2215,7 @@ GameObject:
   - component: {fileID: 4795393939846312346}
   m_Layer: 11
   m_Name: Player
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2227,7 +2227,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4644766298841020338}
-  m_LocalRotation: {x: -0.010887521, y: -0.99994075, z: -4.7590776e-10, w: 0.000000043708777}
+  m_LocalRotation: {x: 0.010890637, y: 0.9999407, z: 0.0000000030589649, w: 0.00000028086362}
   m_LocalPosition: {x: -30.01995, y: 2.8785963, z: 0.011368513}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
@@ -2239,7 +2239,7 @@ Transform:
   - {fileID: 4644766298541938549}
   m_Father: {fileID: 0}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 179.99998, z: 1.248}
 --- !u!212 &4644766298841020341
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -2311,7 +2311,7 @@ Rigidbody2D:
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 1
-  m_Constraints: 0
+  m_Constraints: 4
 --- !u!61 &4644766298841020343
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -2355,7 +2355,7 @@ MonoBehaviour:
   - {fileID: 2699229891349291127}
   LegMask:
     serializedVersion: 2
-    m_Bits: 563
+    m_Bits: 819
   Rig: {fileID: 4644766298841020342}
   characterOffest: {x: 0, y: -1.5}
   CharacterOffestAddition: {x: 0, y: 0}
@@ -2368,6 +2368,9 @@ MonoBehaviour:
   HitMask:
     serializedVersion: 2
     m_Bits: 512
+  PlayerBattery: {fileID: 0}
+  ArmEnergyConsume: 0.1
+  MoveEnergyConsume: 0.01
 --- !u!231 &4795393939846312346
 SpringJoint2D:
   m_ObjectHideFlags: 0
