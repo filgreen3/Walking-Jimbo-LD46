@@ -2360,10 +2360,10 @@ MonoBehaviour:
     m_Bits: 819
   Rig: {fileID: 4644766298841020342}
   characterOffest: {x: 0, y: -1.5}
-  CharacterOffestAddition: {x: 0, y: 0}
+  CharacterOffestAddition: 0.5
   forceUp: 1.2
   move: 7
-  jump: 0.7
+  jump: 0.5
   rote: 25
   Arm: {fileID: 2699229891349291127}
   ArmForce: 3

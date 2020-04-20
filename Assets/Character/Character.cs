@@ -12,10 +12,10 @@ public class Character : MonoBehaviour
     public LayerMask LegMask;
     public Rigidbody2D Rig;
     [SerializeField] private Vector2 characterOffest = default;
-    public Vector2 CharacterOffestAddition = default;
+    public float CharacterOffestAddition = 0.5f;
 
 
-    public Vector2 CharacterOffest => (characterOffest + CharacterOffestAddition) * timeShift;
+    public Vector2 CharacterOffest => (characterOffest + Vector2.up * CharacterOffestAddition) * timeShift;
 
     [SerializeField] private float forceUp = default;
     [SerializeField] private float move = default;
@@ -51,7 +51,13 @@ public class Character : MonoBehaviour
             }
 
         }
-        CharacterOffestAddition = Vector2.up * (1f + Input.GetAxis("Vertical") * jump);
+
+        if (Input.GetAxis("Vertical") != 0)
+        {
+
+            CharacterOffestAddition += Input.GetAxis("Vertical") * .05f;
+            CharacterOffestAddition = Mathf.Clamp(CharacterOffestAddition, 1 - jump, 1 + jump);
+        }
 
 
         var ray = Physics2D.Raycast(CharacterOffest + Rig.position, Vector2.down, 6, LegMask);
@@ -60,7 +66,7 @@ public class Character : MonoBehaviour
         {
 
             var pos = Rig.position;
-            pos.y = ray.point.y + 1f + CharacterOffestAddition.y;
+            pos.y = ray.point.y + 1f + CharacterOffestAddition;
             Rig.position = pos;
         }
     }
