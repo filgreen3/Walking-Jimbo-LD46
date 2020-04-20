@@ -5080,7 +5080,7 @@ PrefabInstance:
     - target: {fileID: 305380919845075403, guid: 3d79c58927c9d5d41906e258da345acc,
         type: 3}
       propertyPath: Level
-      value: -1
+      value: -10
       objectReference: {fileID: 0}
     - target: {fileID: 2129406715454987854, guid: 3d79c58927c9d5d41906e258da345acc,
         type: 3}
@@ -5096,6 +5096,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Volume
       value: 0.703
+      objectReference: {fileID: 0}
+    - target: {fileID: 2627816264470668655, guid: 3d79c58927c9d5d41906e258da345acc,
+        type: 3}
+      propertyPath: m_Pitch
+      value: 1.22
       objectReference: {fileID: 0}
     - target: {fileID: 8039440571582082141, guid: 3d79c58927c9d5d41906e258da345acc,
         type: 3}
