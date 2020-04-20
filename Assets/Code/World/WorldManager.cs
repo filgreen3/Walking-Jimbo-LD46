@@ -20,6 +20,7 @@ public class WorldManager : MonoBehaviour
     {
         Instance = this;
         WorldAudioSource = GetComponent<AudioSource>();
+        Time.timeScale = 1;
 
     }
 
@@ -28,6 +29,7 @@ public class WorldManager : MonoBehaviour
     {
         Debug.Log("End energy");
         EndGameScreen.SetActive(true);
+        Time.timeScale = 0;
     }
 
     public void SoundOnOff()
