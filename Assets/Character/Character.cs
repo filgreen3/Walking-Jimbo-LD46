@@ -22,8 +22,6 @@ public class Character : MonoBehaviour
     [SerializeField] private float rote = default;
 
 
-
-
     protected bool rotating;
     protected virtual bool ExtraCoditionToRotate => true;
 
@@ -61,7 +59,6 @@ public class Character : MonoBehaviour
 
         if (ray)
         {
-
             var pos = Rig.position;
             pos.y = ray.point.y + 1f + CharacterOffestAddition;
             Rig.position = pos;

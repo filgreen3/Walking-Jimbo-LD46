@@ -1058,7 +1058,7 @@ MonoBehaviour:
   TakeMask:
     serializedVersion: 2
     m_Bits: 4352
-  Force: 4
+  Force: 6
   Connector: {fileID: 4795393939846312346}
   savedLayer: 0
 --- !u!1 &4644766297012544667
@@ -2327,7 +2327,7 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0.34}
+  m_Offset: {x: 0, y: 0.02}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -2338,7 +2338,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 2.82, y: 0.12}
+  m_Size: {x: 2.82, y: 0.86}
   m_EdgeRadius: 0
 --- !u!114 &4644766298841020336
 MonoBehaviour:
@@ -2357,7 +2357,7 @@ MonoBehaviour:
   - {fileID: 2699229891349291127}
   LegMask:
     serializedVersion: 2
-    m_Bits: 819
+    m_Bits: 768
   Rig: {fileID: 4644766298841020342}
   characterOffest: {x: 0, y: 0}
   CharacterOffestAddition: 0.5
@@ -2368,7 +2368,8 @@ MonoBehaviour:
   ArmForce: 3
   HitMask:
     serializedVersion: 2
-    m_Bits: 512
+    m_Bits: 21303
+  Blinker: {fileID: 0}
   PlayerBattery: {fileID: 800462383059833958}
   ArmEnergyConsume: 0.1
   MoveEnergyConsume: 0.01
