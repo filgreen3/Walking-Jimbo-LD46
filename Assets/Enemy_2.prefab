@@ -75,7 +75,7 @@ GameObject:
   - component: {fileID: 911482411}
   - component: {fileID: 911482409}
   - component: {fileID: 911482414}
-  m_Layer: 0
+  m_Layer: 14
   m_Name: Sprites_03_16
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -407,6 +407,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   MaxVelocityConsume: 5
+  HitMask:
+    serializedVersion: 2
+    m_Bits: 4294967295
   OnGetDamage:
     m_PersistentCalls:
       m_Calls:

@@ -7,12 +7,13 @@ using UnityEngine.Events;
 public class DamageConsume : MonoBehaviour
 {
     public float MaxVelocityConsume;
+    public LayerMask HitMask;
     public UnityEvent OnGetDamage = new UnityEvent();
 
     void OnCollisionEnter2D(Collision2D col)
     {
 
-        if (col.relativeVelocity.magnitude > MaxVelocityConsume)
+        if (HitMask == (HitMask | (1 << col.gameObject.layer)) && col.relativeVelocity.magnitude > MaxVelocityConsume)
         {
             OnGetDamage.Invoke();
         }

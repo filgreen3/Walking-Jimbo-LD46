@@ -732,6 +732,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   MaxVelocityConsume: 5
+  HitMask:
+    serializedVersion: 2
+    m_Bits: 4294967295
   OnGetDamage:
     m_PersistentCalls:
       m_Calls:
