@@ -13,7 +13,7 @@ public class WorldManager : MonoBehaviour
     public GameObject EndGameScreen;
     public AudioSource WorldAudioSource;
     public Image SOUNDER;
-
+    public int kills = 0;
 
 
     private void Awake()

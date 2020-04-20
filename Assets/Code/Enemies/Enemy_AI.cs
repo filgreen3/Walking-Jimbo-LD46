@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class Enemy_AI : MonoBehaviour
 {
@@ -50,6 +51,11 @@ public class Enemy_AI : MonoBehaviour
     {
         if (!enabled) return;
         dead = true;
+        WorldManager WorldManager= GameObject.Find("WorldManager").GetComponent<WorldManager>();
+        Text text = GameObject.Find("KillsText").GetComponent<Text>();
+        WorldManager.kills ++;
+        text.text = "x "+(WorldManager.kills).ToString();
+        PlayerPrefs.SetInt("Kills", PlayerPrefs.GetInt("Kills")+1);
         Hand.freezeRotation = false;
         Leg1.freezeRotation = false;
         Leg2.freezeRotation = false;
