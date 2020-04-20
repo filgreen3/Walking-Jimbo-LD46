@@ -89,7 +89,7 @@ public class Tutorial : MonoBehaviour
             if (timer == 100)
             {
                 timer++;
-                story = "Ok! It's works.\nNow use W to go up";
+                story = "Ok! It works.\nNow use W to get up";
                 StartCoroutine("PlayText");
             }
             else
@@ -108,7 +108,7 @@ public class Tutorial : MonoBehaviour
                 }
                 if (canpress&&Input.GetKeyDown(KeyCode.D) && W && A && !D && !S)
                 {
-                    story = "Now use S to go down";
+                    story = "Now use S to sit down";
                     StartCoroutine("PlayText");
                     D = true;
                 }
