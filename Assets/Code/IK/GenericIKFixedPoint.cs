@@ -6,9 +6,9 @@ public class GenericIKFixedPoint : GenericSubTargetIKLineRender
 {
     [ContextMenu("Update")]
 
-    protected override void Update()
+    protected override void FixedUpdate()
     {
-        base.Update();
+        base.FixedUpdate();
 
         Bones.SetPosition(0, transform.position);
 

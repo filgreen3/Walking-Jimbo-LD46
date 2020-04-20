@@ -31,7 +31,7 @@ public class ArmedCharacter : Character
     {
         foreach (var arm in Arms)
         {
-            arm.targetObj = value.transform;
+            arm.target = value.transform;
         }
     }
 

@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class GenericIKLineRender : MonoBehaviour
 {
-    [SerializeField] protected Transform target = null;
+    public Transform target = null;
     [SerializeField] protected LineRenderer Bones = null;
 
     public float Weight;
@@ -15,7 +15,7 @@ public class GenericIKLineRender : MonoBehaviour
     public virtual Vector3 IKTarget => target.position;
 
 
-    protected virtual void Update()
+    protected virtual void FixedUpdate()
     {
 
         for (int i = Bones.positionCount - 1; i >= 0; i--)

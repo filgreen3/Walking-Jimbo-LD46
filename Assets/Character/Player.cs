@@ -38,8 +38,8 @@ public class Player : Character
     private void Start()
     {
         CharacterOffestAddition = 0.15f;
-        armTarget = Arm.targetObj.GetComponent<Rigidbody2D>();
-        prevVector = Arm.targetObj.localPosition;
+        armTarget = Arm.target.GetComponent<Rigidbody2D>();
+        prevVector = Arm.target.localPosition;
 
 
         var diff = (1 + PlayerPrefs.GetInt("Difficulty")) / 2f;
