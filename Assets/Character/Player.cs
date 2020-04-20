@@ -43,6 +43,7 @@ public class Player : Character
 
 
         var diff = (1 + PlayerPrefs.GetInt("Difficulty")) / 2f;
+        diff *= diff;
         ArmEnergyConsume *= diff;
         MoveEnergyConsume *= diff;
     }
