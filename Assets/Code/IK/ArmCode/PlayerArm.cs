@@ -51,15 +51,13 @@ public class PlayerArm : ArmIK
                 TakedObject.AddForce(Vector2.ClampMagnitude((Vector2)targetObj.position - TakedObject.position, 1f) * Force);
             else
             {
-                TakedObject.velocity = ((Vector2)RigTakeObj.position - TakedObject.position);
+                TakedObject.transform.localPosition = Vector3.zero;
+                TakedObject.velocity = (ArmTarget.position - TakedObject.position) * 10f;
             }
         }
 
         if (Input.GetMouseButtonDown(1))
-        {
             TakedObject?.GetComponent<GenericItem>()?.Action(this);
-            TakedObject.velocity = Vector3.zero;
-        }
 
 
     }
@@ -120,6 +118,7 @@ public class PlayerArm : ArmIK
             TakedObject.gravityScale = 1f;
             if (TakedObject.mass <= maxMass)
                 TakedObject.transform.SetParent(null);
+            TakedObject.velocity = ArmTarget.velocity * 1.2f;
 
             Connector.enabled = false;
             Connector.connectedBody = null;
