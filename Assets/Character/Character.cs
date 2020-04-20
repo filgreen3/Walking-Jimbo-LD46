@@ -55,7 +55,7 @@ public class Character : MonoBehaviour
         }
 
 
-        var ray = Physics2D.Raycast(CharacterOffest + Rig.position, Vector2.down, 100, LegMask);
+        var ray = Physics2D.Raycast(characterOffest + Rig.position, Vector2.down, 100, LegMask);
 
         if (ray)
         {
