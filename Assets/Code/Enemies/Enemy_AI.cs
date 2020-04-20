@@ -75,7 +75,7 @@ public class Enemy_AI : MonoBehaviour
 
         animator.enabled = false;
         enabled = false;
-        Body.AddForce(Vector3.up * 1000f);
+        Body.AddForce(new Vector3 (Random.Range(-0.3f,0.3f),1) * 1000f);
     }
 
 
