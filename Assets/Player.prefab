@@ -2423,9 +2423,9 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 768
   Rig: {fileID: 4644766298841020342}
-  characterOffest: {x: 0, y: -1}
+  characterOffest: {x: 0, y: -1.5}
   CharacterOffestAddition: 0.5
-  forceUp: 1.2
+  forceUp: 25
   move: 7
   rote: 25
   Arm: {fileID: 2699229891349291127}
