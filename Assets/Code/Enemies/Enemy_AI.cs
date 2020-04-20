@@ -22,7 +22,7 @@ public class Enemy_AI : MonoBehaviour
     public SpriteRenderer Eye1Rendered;
     public SpriteRenderer Eye2Rendered;
 
-
+    public GameObject Attention;
 
     Animator animator;
     public bool Rdirection = true;
@@ -91,7 +91,7 @@ public class Enemy_AI : MonoBehaviour
             Debug.DrawRay(detector.position, (-(new Vector3(transform.position.x, detector.position.y)) + detector.position).normalized, Color.green);
             if (detection.collider == true && detection.collider.tag == "Player")
             {
-
+                Attention.SetActive(true);
                 playerinview = true;
                 player = detection.transform;
             }

@@ -9,6 +9,7 @@ public class Player : Character
     public PlayerArm Arm;
     public float ArmForce;
     public LayerMask HitMask;
+    public GameObject Blinker;
 
     private Rigidbody2D armTarget;
 
@@ -29,6 +30,8 @@ public class Player : Character
     {
         if (Input.GetKeyDown(KeyCode.E))
             armActive = !armActive;
+        if (armActive) Blinker.SetActive(true);
+        else Blinker.SetActive(false);
     }
 
 
