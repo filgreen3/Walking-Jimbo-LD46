@@ -14,6 +14,7 @@ public class WorldManager : MonoBehaviour
     public AudioSource WorldAudioSource;
     public Image SOUNDER;
     public int kills = 0;
+    public Elevator Elevator;
 
 
     private void Awake()
@@ -28,7 +29,7 @@ public class WorldManager : MonoBehaviour
     public void EndEnergyMoment()
     {
         Debug.Log("End energy");
-        EndGameScreen.SetActive(true);
+        if (Elevator.Level<0)EndGameScreen.SetActive(true);
         Time.timeScale = 0;
     }
 
