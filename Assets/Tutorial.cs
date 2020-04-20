@@ -114,9 +114,21 @@ public class Tutorial : MonoBehaviour
                 }
                 if (canpress&&Input.GetKeyDown(KeyCode.S) && D && A && W && !S)
                 {
-                    story = "Now pick up that energy can.\nUse E.\nBe careful with the lamp!";
+                    story = "Use E to activate\nyour hand";
                     StartCoroutine("PlayText");
                     S = true;
+                }                
+                if (canpress&&Input.GetKeyDown(KeyCode.E) && D && A && W && S&&!E)
+                {
+                    story = "Using your hand you lose energy\nTake battery \v with L MOUSE\nand replace it with R MOUSE";
+                    StartCoroutine("PlayText");
+                    E = true;
+                }
+                if (canpress&&Input.GetMouseButtonDown(1) && D && A && W && S&&E)
+                {
+                    story = "Now lift that box over yourself\nBe careful with the lamp";
+                    StartCoroutine("PlayText");
+                    E = true;
                 }
 
             }
@@ -124,7 +136,7 @@ public class Tutorial : MonoBehaviour
     }
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.gameObject.name== "Battery"&& canpress && D && A && W && S)
+        if (collision.gameObject.name== "Box"&& canpress && D && A && W && S && E)
         {
             story = "Now put it down";
             StartCoroutine("PlayText");
@@ -132,9 +144,9 @@ public class Tutorial : MonoBehaviour
     }    
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        if (collision.gameObject.name== "Battery"&& canpress && D && A && W && S)
+        if (collision.gameObject.name== "Box" && canpress && D && A && W && S && E)
         {
-            story = "Now lift that energy can\nover yourself";
+            story = "Now lift that box\nover yourself";
             StartCoroutine("PlayText");
         }
     }
