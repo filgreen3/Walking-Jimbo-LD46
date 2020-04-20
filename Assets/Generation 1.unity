@@ -586,6 +586,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 4644766298841020336, guid: 1859bf8345808d542b75e09c5caa78a0,
+        type: 3}
+      propertyPath: characterOffest.y
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 4644766298841020337, guid: 1859bf8345808d542b75e09c5caa78a0,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -645,6 +650,21 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Player
+      objectReference: {fileID: 0}
+    - target: {fileID: 4644766298841020343, guid: 1859bf8345808d542b75e09c5caa78a0,
+        type: 3}
+      propertyPath: m_Size.x
+      value: 2.82
+      objectReference: {fileID: 0}
+    - target: {fileID: 4644766298841020343, guid: 1859bf8345808d542b75e09c5caa78a0,
+        type: 3}
+      propertyPath: m_Size.y
+      value: 0.12
+      objectReference: {fileID: 0}
+    - target: {fileID: 4644766298841020343, guid: 1859bf8345808d542b75e09c5caa78a0,
+        type: 3}
+      propertyPath: m_Offset.y
+      value: 0.34
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 1859bf8345808d542b75e09c5caa78a0, type: 3}
@@ -1448,6 +1468,7 @@ MonoBehaviour:
   MainCamera: {fileID: 1035336682}
   EnergySlider: {fileID: 2084057635}
   EndGameScreen: {fileID: 1978740928}
+  WorldAudioSource: {fileID: 0}
 --- !u!81 &1035336681
 AudioListener:
   m_ObjectHideFlags: 0

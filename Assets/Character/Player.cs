@@ -37,7 +37,7 @@ public class Player : Character
 
     private void Start()
     {
-        CharacterOffestAddition = 0.5f;
+        CharacterOffestAddition = 0.15f;
         armTarget = Arm.targetObj.GetComponent<Rigidbody2D>();
         prevVector = Arm.targetObj.localPosition;
     }

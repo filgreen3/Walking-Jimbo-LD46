@@ -15,15 +15,13 @@ public class Character : MonoBehaviour
     public float CharacterOffestAddition = 0.5f;
 
 
-    public Vector2 CharacterOffest => (characterOffest + Vector2.up * CharacterOffestAddition) * timeShift;
+    public Vector2 CharacterOffest => (characterOffest + Vector2.up * CharacterOffestAddition);
 
     [SerializeField] private float forceUp = default;
     [SerializeField] private float move = default;
-    [SerializeField] private float jump = default;
     [SerializeField] private float rote = default;
 
 
-    float timeShift;
 
 
     protected bool rotating;
@@ -34,7 +32,6 @@ public class Character : MonoBehaviour
 
     protected virtual void FixedUpdate()
     {
-        timeShift = 1 + (0.025f * Mathf.Sin(Time.timeSinceLevelLoad * 2));
 
         var horiz = Input.GetAxis("Horizontal");
 
@@ -56,7 +53,7 @@ public class Character : MonoBehaviour
         {
 
             CharacterOffestAddition += Input.GetAxis("Vertical") * .05f;
-            CharacterOffestAddition = Mathf.Clamp(CharacterOffestAddition, 1 - jump, 1 + jump);
+            CharacterOffestAddition = Mathf.Clamp(CharacterOffestAddition, 0.15f, 1.5f);
         }
 
 
