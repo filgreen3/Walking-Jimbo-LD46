@@ -99,6 +99,8 @@ public class Player : Character
 
         if (PlayerBattery.Energy <= 0)
             WorldManager.Instance.EndEnergyMoment();
+
+
         WorldManager.Instance.EnergySlider.value = PlayerBattery.Energy;
 
     }

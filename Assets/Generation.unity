@@ -1756,7 +1756,6 @@ GameObject:
   - component: {fileID: 1035336683}
   - component: {fileID: 1035336682}
   - component: {fileID: 1035336681}
-  - component: {fileID: 1035336680}
   - component: {fileID: 1035336684}
   m_Layer: 11
   m_Name: Main Camera (1)
@@ -1765,23 +1764,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &1035336680
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1035336679}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 829462e83bdf9974d8ed41d59564126e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  MainCamera: {fileID: 1035336682}
-  EnergySlider: {fileID: 0}
-  EndGameScreen: {fileID: 0}
-  WorldAudioSource: {fileID: 0}
-  SOUNDER: {fileID: 0}
 --- !u!81 &1035336681
 AudioListener:
   m_ObjectHideFlags: 0
@@ -3044,6 +3026,11 @@ PrefabInstance:
         type: 3}
       propertyPath: ArmEnergyConsume
       value: 0.072
+      objectReference: {fileID: 0}
+    - target: {fileID: 4644766298841020336, guid: 1859bf8345808d542b75e09c5caa78a0,
+        type: 3}
+      propertyPath: characterOffest.y
+      value: -1
       objectReference: {fileID: 0}
     - target: {fileID: 4644766298841020337, guid: 1859bf8345808d542b75e09c5caa78a0,
         type: 3}

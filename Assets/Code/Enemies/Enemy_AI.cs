@@ -37,7 +37,7 @@ public class Enemy_AI : MonoBehaviour
     void Start()
     {
         animator = gameObject.GetComponentInChildren(typeof(Animator)) as Animator;
-        detector = transform.Find("detector").transform;
+        detector = transform.Find("detector")?.transform;
         animator.SetFloat("ASpeed", Random.Range(0.7f, 1.3f));
         speed = animator.GetFloat("ASpeed");
         Body.bodyType = RigidbodyType2D.Kinematic;
@@ -63,9 +63,9 @@ public class Enemy_AI : MonoBehaviour
         Hand.gameObject.layer = 13;
         Leg1.gameObject.layer = 13;
         Leg2.gameObject.layer = 13;
-        Hand.gameObject.GetComponent<BoxCollider2D>().enabled=true;
-        Leg1.gameObject.GetComponent<BoxCollider2D>().enabled=true;
-        Leg2.gameObject.GetComponent<BoxCollider2D>().enabled=true;
+        Hand.gameObject.GetComponent<BoxCollider2D>().enabled = true;
+        Leg1.gameObject.GetComponent<BoxCollider2D>().enabled = true;
+        Leg2.gameObject.GetComponent<BoxCollider2D>().enabled = true;
         //Leg1.gameObject.layer = 12;
         //Leg2.gameObject.layer = 12;
 
@@ -75,14 +75,14 @@ public class Enemy_AI : MonoBehaviour
 
         animator.enabled = false;
         enabled = false;
-        Body.AddForce(new Vector3 (Random.Range(-0.3f,0.3f),1) * 1000f);
+        Body.AddForce(new Vector3(Random.Range(-0.3f, 0.3f), 1) * 1000f);
     }
 
 
     void FixedUpdate()
     {
 
-        if (!playerinview&& detector!=null)
+        if (!playerinview && detector != null)
         {
             RaycastHit2D detection = Physics2D.Raycast
                     (detector.position,
