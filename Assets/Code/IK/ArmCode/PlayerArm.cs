@@ -25,14 +25,16 @@ public class PlayerArm : ArmIK
 
 
 
-    public override Vector2 IKTarget => (TakedObject != null && TakedObject.mass > maxMass) ? TakedObject.position : (Vector2)targetObj.position;
+    public override Vector3 IKTarget => (TakedObject != null && TakedObject.mass > maxMass) ? (Vector3)TakedObject.position : target.position;
 
 
     protected override void FixedUpdate()
     {
         base.FixedUpdate();
-
-
+        var dir = Bones.GetPosition(Bones.positionCount - 1) - Bones.GetPosition(Bones.positionCount - 2);
+        dir.Normalize();
+        RigTakeObj.eulerAngles = Vector3.forward * Mathf.Atan2(dir.y, dir.x) * 57.2f;
+        RigTakeObj.transform.position = Bones.GetPosition(Bones.positionCount - 1);
 
     }
 
@@ -48,7 +50,7 @@ public class PlayerArm : ArmIK
         {
 
             if (TakedObject.mass > maxMass)
-                TakedObject.AddForce(Vector2.ClampMagnitude((Vector2)targetObj.position - TakedObject.position, 1f) * Force);
+                TakedObject.AddForce(Vector2.ClampMagnitude((Vector2)target.position - TakedObject.position, 1f) * Force);
             else
             {
                 TakedObject.velocity = ((Vector2)RigTakeObj.position - TakedObject.position) * 20f;

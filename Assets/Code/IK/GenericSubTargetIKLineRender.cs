@@ -7,7 +7,7 @@ public class GenericSubTargetIKLineRender : GenericIKLineRender
 
     public Transform SubIKTarget;
 
-    protected override void Update()
+    protected override void FixedUpdate()
     {
         for (int i = Bones.positionCount - 1; i >= 0; i--)
         {

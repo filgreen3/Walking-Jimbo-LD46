@@ -2,11 +2,11 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class ArmIK : GenericSubTargetIK
+public class ArmIK : GenericIKFixedPoint
 {
 
     public Transform Transf;
-    public override Vector2 IKTarget => targetObj.position;
+    public override Vector3 IKTarget => target.position;
 
 
     private void Start()
@@ -14,16 +14,6 @@ public class ArmIK : GenericSubTargetIK
         Transf = transform;
     }
 
-    protected override void FixedUpdate()
-    {
-        base.FixedUpdate();
 
-
-        Bones[0].position = transform.position;
-
-        for (int i = 1; i < Bones.Count; i++)
-            Bones[i].position = Bones[i - 1].endPoint;
-
-    }
 
 }
