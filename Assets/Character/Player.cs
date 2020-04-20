@@ -99,5 +99,10 @@ public class Player : Character
 
     }
 
+    public void GetDamage(float value)
+    {
+        PlayerBattery.Energy -= value;
+    }
+
 
 }
