@@ -51,8 +51,7 @@ public class PlayerArm : ArmIK
                 TakedObject.AddForce(Vector2.ClampMagnitude((Vector2)targetObj.position - TakedObject.position, 1f) * Force);
             else
             {
-                TakedObject.transform.localPosition = Vector3.zero;
-                TakedObject.velocity = (ArmTarget.position - TakedObject.position) * 10f;
+                TakedObject.velocity = ((Vector2)RigTakeObj.position - TakedObject.position) * 20f;
             }
         }
 

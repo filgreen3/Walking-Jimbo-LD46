@@ -69,6 +69,8 @@ public class Enemy_AI : MonoBehaviour
         //Leg1.gameObject.layer = 12;
         //Leg2.gameObject.layer = 12;
 
+        PlayerPrefs.SetInt("Kills", PlayerPrefs.GetInt("Kills") + 1);
+
         Eye1Rendered.sprite = DeadEye;
         Eye2Rendered.sprite = DeadEye;
         Eye2Rendered.color = Color.white;

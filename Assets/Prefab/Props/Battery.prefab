@@ -13,6 +13,8 @@ GameObject:
   - component: {fileID: 3349681333453927248}
   - component: {fileID: 8882555118142613734}
   - component: {fileID: 800462382105048844}
+  - component: {fileID: -498418366967427129}
+  - component: {fileID: 9140876007204634043}
   m_Layer: 8
   m_Name: Battery
   m_TagString: Untagged
@@ -146,3 +148,46 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Transf: {fileID: 4901618739469968238}
   Energy: 1
+--- !u!114 &-498418366967427129
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5012117388343251091}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 008c8fd149d9e9c47ab76e96d0bac61e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  MaxVelocityConsume: 4
+  HitMask:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  OnGetDamage:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 9140876007204634043}
+        m_MethodName: PlaySound
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+--- !u!114 &9140876007204634043
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5012117388343251091}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9f4fe49a954db8642a467071fdfdc434, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  "\u0441lip": {fileID: 8300000, guid: 0ffdc49a8a143e14fac4bd3e83711cf5, type: 3}

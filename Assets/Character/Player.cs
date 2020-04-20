@@ -40,6 +40,11 @@ public class Player : Character
         CharacterOffestAddition = 0.15f;
         armTarget = Arm.targetObj.GetComponent<Rigidbody2D>();
         prevVector = Arm.targetObj.localPosition;
+
+
+        var diff = (1 + PlayerPrefs.GetInt("Difficulty")) / 2f;
+        ArmEnergyConsume *= diff;
+        MoveEnergyConsume *= diff;
     }
 
     protected override bool ExtraCoditionToRotate => Arm.TakedObject == null || Arm.TakedObject.mass < 1f;

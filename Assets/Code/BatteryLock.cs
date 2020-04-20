@@ -6,6 +6,8 @@ public class BatteryLock : MonoBehaviour
 {
     [SerializeField] private Player player;
     [SerializeField] private Battery usageBattery;
+    [SerializeField] private AudioClip batteryON;
+
 
     private void Start()
     {
@@ -34,6 +36,8 @@ public class BatteryLock : MonoBehaviour
 
     void DisableBattery(Battery battery)
     {
+
+        WorldManager.Instance.WorldAudioSource.PlayOneShot(batteryON);
         player.PlayerBattery = battery;
         battery.gameObject.layer = 13;
         battery.Transf.SetParent(transform);
