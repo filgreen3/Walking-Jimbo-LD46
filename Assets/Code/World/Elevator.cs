@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class Elevator : MonoBehaviour
 {
+    AudioSource audio;
+    public AudioClip clip;
     public GameObject[] Rroom;
     public GameObject[] RroomB;
     public GameObject[] Lroom;
@@ -25,7 +27,8 @@ public class Elevator : MonoBehaviour
     private void Start()
     {
         Player = GameObject.FindGameObjectWithTag("Player").transform;
-        //Indicator = gameObject.transform.Find("Indicator").gameObject.GetComponent<SpriteRenderer>();
+        audio = GetComponent<AudioSource>();
+            //Indicator = gameObject.transform.Find("Indicator").gameObject.GetComponent<SpriteRenderer>();
 
     }
     private void Update()
@@ -44,6 +47,7 @@ public class Elevator : MonoBehaviour
 
     IEnumerator Elevate()
     {
+        audio.PlayOneShot(clip);
         Level++;
         Player.parent = gameObject.transform;
         Player.gameObject.GetComponent<Rigidbody2D>().bodyType = RigidbodyType2D.Kinematic;

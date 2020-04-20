@@ -238,7 +238,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9f4fe49a954db8642a467071fdfdc434, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  "\u0441lip": {fileID: 8300000, guid: c98a8f00ed689e249864fdbbb1f140dd, type: 3}
+  "\u0441lip": {fileID: 8300000, guid: aa69982f255c52e4e86f007f8a0e8f4c, type: 3}
 --- !u!1 &6843435964026863196
 GameObject:
   m_ObjectHideFlags: 0

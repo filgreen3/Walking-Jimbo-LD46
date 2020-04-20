@@ -71,7 +71,7 @@ public class Tutorial : MonoBehaviour
 
             yield return null;
         }
-        camera.orthographicSize =8;
+        camera.orthographicSize =10;
         Destroy(gameObject);
 
     }

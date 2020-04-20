@@ -138,9 +138,9 @@ MonoBehaviour:
   force: 100
   firePoint: {fileID: 1545575284}
   audioSource: {fileID: 1748759689}
-  fireSound: {fileID: 8300000, guid: 0f5a5eab1f0433e499744bb9846db940, type: 3}
-  outOfAmmoSound: {fileID: 8300000, guid: 0f5a5eab1f0433e499744bb9846db940, type: 3}
-  Ammo: 3
+  fireSound: {fileID: 8300000, guid: 8dd692c25ffe4ac4b81c7ca578c4e85a, type: 3}
+  outOfAmmoSound: {fileID: 8300000, guid: a5118d5a191ff2c49b03b3ec371f410a, type: 3}
+  Ammo: 5
 --- !u!50 &1748759686
 Rigidbody2D:
   serializedVersion: 4

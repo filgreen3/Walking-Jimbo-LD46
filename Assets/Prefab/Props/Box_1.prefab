@@ -145,7 +145,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9f4fe49a954db8642a467071fdfdc434, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  "\u0441lip": {fileID: 8300000, guid: b61e742b3e959cf489ed9ea47b8e14c0, type: 3}
+  "\u0441lip": {fileID: 8300000, guid: dfbfed6fa2e849f47ada114650b58402, type: 3}
 --- !u!114 &8145247557874125083
 MonoBehaviour:
   m_ObjectHideFlags: 0
