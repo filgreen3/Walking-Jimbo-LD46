@@ -9,6 +9,8 @@ public class Gunshot : GenericItem
     [SerializeField] private GameObject bulletShell;
 
     [SerializeField] private float force;
+    [SerializeField] private Transform firePoint;
+
 
 
     [Header("Audio")]
@@ -36,9 +38,10 @@ public class Gunshot : GenericItem
 
     public void Shot()
     {
+
         audioSource.PlayOneShot(fireSound);
         Instantiate(bulletShell, transform.position + transform.up, Quaternion.identity).GetComponent<Rigidbody2D>().AddForce(transform.up * force / 10f);
-        Instantiate(bullet, transform.position + transform.right, Quaternion.identity).GetComponent<Rigidbody2D>().AddForce(transform.right * force);
+        Instantiate(bullet, firePoint.position, Quaternion.identity).GetComponent<Rigidbody2D>().AddForce((firePoint.position - transform.position).normalized * force);
         StartCoroutine(Attack());
     }
     IEnumerator Attack()
