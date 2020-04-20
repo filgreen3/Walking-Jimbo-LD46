@@ -36,6 +36,12 @@ public class Gunshot : GenericItem
         }
     }
 
+    public override void Drop()
+    {
+        base.Drop();
+        GetComponent<Collider2D>().isTrigger = false;
+    }
+
     public void Shot()
     {
 

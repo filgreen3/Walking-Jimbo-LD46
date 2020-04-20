@@ -61,7 +61,7 @@ public class PlayerArm : ArmIK
 
 
     }
-
+    public int savedLayer;
 
     public virtual void TakeItem()
     {
@@ -84,6 +84,7 @@ public class PlayerArm : ArmIK
                 TakedObject.freezeRotation = true;
                 TakedObject.gravityScale = 0f;
                 TakedObject.transform.SetParent(RigTakeObj);
+                savedLayer = TakedObject.gameObject.layer;
                 TakedObject.gameObject.layer = 13;
 
             }
@@ -122,7 +123,7 @@ public class PlayerArm : ArmIK
             Connector.enabled = false;
             Connector.connectedBody = null;
             TakedObject.freezeRotation = false;
-            TakedObject.gameObject.layer = 8;
+            TakedObject.gameObject.layer = savedLayer;
 
 
 
