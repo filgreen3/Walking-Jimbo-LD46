@@ -9,7 +9,9 @@ public class Elevator : MonoBehaviour
     public GameObject[] Lroom;
     public GameObject[] LroomB;
     public GameObject[] Croom;
+    public GameObject Endroom;
 
+    public int Level = -10; 
 
     public GameObject CurrentRRoom;
     public GameObject CurrentLRoom;
@@ -42,6 +44,7 @@ public class Elevator : MonoBehaviour
 
     IEnumerator Elevate()
     {
+        Level++;
         Player.parent = gameObject.transform;
         Player.gameObject.GetComponent<Rigidbody2D>().bodyType = RigidbodyType2D.Kinematic;
         float elapsedTime = 0;

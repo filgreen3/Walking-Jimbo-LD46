@@ -16,6 +16,8 @@ public class Tutorial : MonoBehaviour
     string story;
     public AudioClip sound;
     AudioSource audio;
+    public Camera camera;
+    bool dead = false;
 
     void Awake()
     {
@@ -40,10 +42,47 @@ public class Tutorial : MonoBehaviour
     }
 
 
-    // Update is called once per frame
+    IEnumerator Dead()
+    {
+        Time.timeScale = 0.5f;
+        float elapsedTime = 0;
+        float waitTime = .8f;
+        Vector3 currentPos = camera.transform.position;
+        Vector3 Gotoposition = new Vector3(Enemy.gameObject.transform.position.x, Enemy.gameObject.transform.position.y+3,-10);
+        while (elapsedTime < waitTime)
+        {
+            camera.transform.position = Vector3.Lerp(currentPos, Gotoposition, (elapsedTime / waitTime));
+            camera.orthographicSize = Mathf.Lerp(8, 6, (elapsedTime / waitTime));
+            elapsedTime += Time.deltaTime;
+
+
+            yield return null;
+        }
+        camera.transform.position = Gotoposition;
+
+        Time.timeScale = 1f;
+        elapsedTime = 0;
+        waitTime = 1f;
+        while (elapsedTime < waitTime)
+        {
+            camera.orthographicSize = Mathf.Lerp(6, 10, (elapsedTime / waitTime));
+            elapsedTime += Time.deltaTime;
+
+
+            yield return null;
+        }
+        camera.orthographicSize =8;
+        Destroy(gameObject);
+
+    }
     void Update()
     {
-        if (Enemy.dead) Destroy(gameObject);
+        if (Enemy.dead&&!dead)
+        {
+            Destroy(txt.gameObject);
+            StartCoroutine("Dead");
+            dead = true;
+        }
         if (timer < 100) timer++;
         else
         {

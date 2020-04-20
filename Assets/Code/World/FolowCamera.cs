@@ -16,8 +16,11 @@ public class FolowCamera : MonoBehaviour
     public static Vector3 zeroPoint = Vector3.zero;
 
     public Transform objectToFolow;
-
-    // Update is called once per frame
+    Elevator elevator;
+    private void Start()
+    {
+        elevator = GameObject.Find("Elevator").GetComponent<Elevator>();
+    }
     void Update()
     {
 
@@ -25,8 +28,16 @@ public class FolowCamera : MonoBehaviour
         pos.z = -10;
         pos.y = pos.y < downBorder ? downBorder : pos.y > upBorder ? upBorder : pos.y;
         transform.position = pos;*/
-        transform.position = Vector3.Lerp(transform.position, objectToFolow.position, lerpTime);
-        transform.position = new Vector3(transform.position.x, transform.position.y, -10);
+        if (elevator.Level < 1)
+        {
+            transform.position = Vector3.Lerp(transform.position, objectToFolow.position, lerpTime);
+            transform.position = new Vector3(transform.position.x, transform.position.y, -10);
+        }
+        else
+        {
+            transform.position = Vector3.Lerp(transform.position, objectToFolow.position, lerpTime);
+            transform.position = new Vector3(0, transform.position.y, -10);
+        }
     }
 
 

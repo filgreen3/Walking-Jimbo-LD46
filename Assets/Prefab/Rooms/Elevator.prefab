@@ -151,6 +151,8 @@ MonoBehaviour:
   - {fileID: 8759069769956677827, guid: f32101bb6353b3d47b5036d4bfa4ae19, type: 3}
   Croom:
   - {fileID: 9046834921437250641, guid: 0aaf236303b26084b91dc7dbb74bce2d, type: 3}
+  Endroom: {fileID: 9046834921437250641, guid: f2d711a4837385045a86dc663f72089f, type: 3}
+  Level: -10
   CurrentRRoom: {fileID: 0}
   CurrentLRoom: {fileID: 0}
   CurrentCRoom: {fileID: 0}
