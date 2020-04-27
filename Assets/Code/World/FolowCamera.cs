@@ -11,7 +11,7 @@ public class FolowCamera : MonoBehaviour
     [SerializeField] private float downBorder = 7;
     [SerializeField] private float upBorder = 20;
 
-    private float lerpTime = .01f;
+    private float lerpTime = .04f;
 
     public static Vector3 zeroPoint = Vector3.zero;
 
