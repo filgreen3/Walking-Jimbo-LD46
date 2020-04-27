@@ -21,7 +21,7 @@ public class FolowCamera : MonoBehaviour
     {
         elevator = GameObject.Find("Elevator").GetComponent<Elevator>();
     }
-    void LateUpdate()
+    void FixedUpdate()
     {
         transform.position = Vector3.Lerp(transform.position, objectToFolow.position, lerpTime);
 
