@@ -18,6 +18,7 @@ public class Tutorial : MonoBehaviour
     AudioSource audio;
     public Camera camera;
     bool dead = false;
+    public GameObject visual;
 
     void Awake()
     {
@@ -120,13 +121,14 @@ public class Tutorial : MonoBehaviour
                 }                
                 if (canpress&&Input.GetKeyDown(KeyCode.E) && D && A && W && S&&!E)
                 {
-                    story = "Using your hand you lose energy\nTake battery \v with L MOUSE\nand replace it with R MOUSE";
+                    story = "Using your hand you lose energy\nchange the battery";
                     StartCoroutine("PlayText");
                     E = true;
+                    visual.SetActive(true);
                 }
                 if (canpress&&Input.GetMouseButtonDown(1) && D && A && W && S&&E)
                 {
-                    story = "Now lift that box over yourself\nBe careful with the lamp";
+                    story = "Now lift that box over yourself\nwith R Mouse Button";
                     StartCoroutine("PlayText");
                     E = true;
                 }
