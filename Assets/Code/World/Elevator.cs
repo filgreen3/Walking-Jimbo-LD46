@@ -13,7 +13,7 @@ public class Elevator : MonoBehaviour
     public GameObject[] Croom;
     public GameObject Endroom;
 
-    public int Level = -10; 
+    public int Level = -10;
 
     public GameObject CurrentRRoom;
     public GameObject CurrentLRoom;
@@ -28,7 +28,7 @@ public class Elevator : MonoBehaviour
     {
         Player = GameObject.FindGameObjectWithTag("Player").transform;
         audio = GetComponent<AudioSource>();
-            //Indicator = gameObject.transform.Find("Indicator").gameObject.GetComponent<SpriteRenderer>();
+        //Indicator = gameObject.transform.Find("Indicator").gameObject.GetComponent<SpriteRenderer>();
 
     }
     private void Update()
@@ -47,6 +47,7 @@ public class Elevator : MonoBehaviour
 
     IEnumerator Elevate()
     {
+        var waiter = new WaitForFixedUpdate();
         audio.PlayOneShot(clip);
         Level++;
         Player.parent = gameObject.transform;
@@ -58,10 +59,10 @@ public class Elevator : MonoBehaviour
         while (elapsedTime < waitTime)
         {
             transform.position = Vector3.Lerp(currentPos, Gotoposition, (elapsedTime / waitTime));
-            elapsedTime += Time.deltaTime;
+            elapsedTime += Time.fixedDeltaTime;
 
 
-            yield return null;
+            yield return waiter;
         }
         transform.position = Gotoposition;
         Player.parent = null;

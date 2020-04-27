@@ -60,7 +60,7 @@ public class Character : MonoBehaviour
         if (ray)
         {
             var pos = Rig.velocity;
-            pos.y = (ray.point.y + 1f + CharacterOffestAddition) - Rig.position.y;
+            pos.y = (ray.point.y + 0.8f + CharacterOffestAddition) - Rig.position.y;
             pos.y *= Mathf.Abs(pos.y) * forceUp;
             Rig.velocity = pos;
         }
@@ -94,6 +94,7 @@ public class Character : MonoBehaviour
     void OnDrawGizmos()
     {
         Gizmos.color = Color.red;
+        Gizmos.DrawRay(characterOffest + Rig.position, Vector2.down);
     }
 }
 

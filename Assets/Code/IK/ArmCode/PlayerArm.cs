@@ -35,7 +35,6 @@ public class PlayerArm : ArmIK
         dir.Normalize();
         RigTakeObj.eulerAngles = Vector3.forward * Mathf.Atan2(dir.y, dir.x) * 57.2f;
         RigTakeObj.transform.position = Bones.GetPosition(Bones.positionCount - 1);
-
     }
 
     private void Update()
