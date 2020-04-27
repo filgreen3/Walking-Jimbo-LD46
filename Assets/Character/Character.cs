@@ -94,6 +94,7 @@ public class Character : MonoBehaviour
     void OnDrawGizmos()
     {
         Gizmos.color = Color.red;
+        Gizmos.DrawRay(characterOffest + Rig.position, Vector2.down);
     }
 }
 
