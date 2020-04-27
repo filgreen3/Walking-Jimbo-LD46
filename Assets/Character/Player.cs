@@ -42,8 +42,10 @@ public class Player : Character
         prevVector = Arm.target.localPosition;
 
 
-        var diff = (1 + PlayerPrefs.GetInt("Difficulty")) / 2f;
-        diff *= diff;
+        var diff = (1 + PlayerPrefs.GetInt("Difficulty")) / 2f;   // 0.5 - baby, 1 - normal, 1.5 - hard
+        diff *= 0.5f;// 0.25 - baby, 0.5 - normal, 0.75 - hard
+        diff *= 0.5f;// 0.125 - baby, 0.25 - normal, 0.325 - hard
+
         ArmEnergyConsume *= diff;
         MoveEnergyConsume *= diff;
     }

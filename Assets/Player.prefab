@@ -1116,7 +1116,7 @@ MonoBehaviour:
     m_Bits: 21303
   Blinker: {fileID: 0}
   PlayerBattery: {fileID: 800462383059833958}
-  ArmEnergyConsume: 0.072
+  ArmEnergyConsume: 0.025
   MoveEnergyConsume: 0.01
 --- !u!231 &4795393939846312346
 SpringJoint2D:
