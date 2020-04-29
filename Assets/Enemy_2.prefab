@@ -75,6 +75,8 @@ GameObject:
   - component: {fileID: 7913185574913959844}
   - component: {fileID: 911482411}
   - component: {fileID: 911482409}
+  - component: {fileID: 4357490893153961029}
+  - component: {fileID: 3342544134909049665}
   m_Layer: 14
   m_Name: Sprites_03_16
   m_TagString: Untagged
@@ -224,6 +226,49 @@ FixedJoint2D:
   m_ConnectedAnchor: {x: 0.86000085, y: 0.0000004172325}
   m_DampingRatio: 0
   m_Frequency: 0
+--- !u!114 &4357490893153961029
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7077139571508370205}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 008c8fd149d9e9c47ab76e96d0bac61e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  MaxVelocityConsume: 4
+  HitMask:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  OnGetDamage:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 3342544134909049665}
+        m_MethodName: PlaySound
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+--- !u!114 &3342544134909049665
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7077139571508370205}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9f4fe49a954db8642a467071fdfdc434, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  "\u0441lip": {fileID: 8300000, guid: b94f50be512641544b66a05006115c38, type: 3}
 --- !u!1 &7077139571551490843
 GameObject:
   m_ObjectHideFlags: 0
@@ -662,6 +707,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   melee: 1
+  tutorial: 0
   speed: 1
   distance: 10
   Body: {fileID: 1525329884}
