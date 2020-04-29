@@ -121,14 +121,14 @@ public class Tutorial : MonoBehaviour
                 }                
                 if (canpress&&Input.GetKeyDown(KeyCode.E) && D && A && W && S&&!E)
                 {
-                    story = "Using your hand you lose energy\nchange the battery";
+                    story = "Using your hand you lose energy\nchange the battery\nwith L and R Mouse Buttons";
                     StartCoroutine("PlayText");
                     E = true;
                     visual.SetActive(true);
                 }
                 if (canpress&&Input.GetMouseButtonDown(1) && D && A && W && S&&E)
                 {
-                    story = "Now lift that box over yourself\nwith R Mouse Button";
+                    story = "Now lift that box over yourself";
                     StartCoroutine("PlayText");
                     E = true;
                 }
