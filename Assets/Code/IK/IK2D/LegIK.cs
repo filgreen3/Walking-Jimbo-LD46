@@ -14,7 +14,7 @@ public class LegIK : GenericSubTargetIK
     [SerializeField] private LegIK ConnectedLeg;
     private float defVlaue = 0.5f;
 
-
+    private Transform PlayerTrasform;
 
     private Vector2 currPoint;
     private Vector2 savePoint;
@@ -84,7 +84,11 @@ public class LegIK : GenericSubTargetIK
 
     public override Vector2 IKTarget => Point;
 
-
+    protected override void OnDrawGizmos()
+    {
+        base.OnDrawGizmos();
+        Gizmos.DrawRay(targetObj.position, Vector2.down * 2f);
+    }
 
 }
 

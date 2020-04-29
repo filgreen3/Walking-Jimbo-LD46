@@ -19,6 +19,8 @@ public class Elevator : MonoBehaviour
     public GameObject CurrentLRoom;
     public GameObject CurrentCRoom;
 
+    public UnityEngine.UI.Image BlackScreen;
+
     Transform Player;
     public SpriteRenderer Indicator;
 
@@ -61,6 +63,9 @@ public class Elevator : MonoBehaviour
             transform.position = Vector3.Lerp(currentPos, Gotoposition, (elapsedTime / waitTime));
             elapsedTime += Time.fixedDeltaTime;
 
+            var color = BlackScreen.color;
+            color.a = Mathf.Sin((elapsedTime / waitTime) * Mathf.PI) * 1.5f;
+            BlackScreen.color = color;
 
             yield return waiter;
         }
