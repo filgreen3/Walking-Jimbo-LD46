@@ -11,5 +11,6 @@ public class GenericItem : MonoBehaviour
         transform.SetParent(null);
         GetComponent<Rigidbody2D>().bodyType = RigidbodyType2D.Dynamic;
         GetComponent<Joint2D>().enabled = false;
+        GetComponent<Collider2D>().isTrigger = false;
     }
 }
