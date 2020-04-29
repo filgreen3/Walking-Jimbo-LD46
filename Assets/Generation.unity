@@ -4572,6 +4572,36 @@ PrefabInstance:
       propertyPath: Energy
       value: 1.1
       objectReference: {fileID: 0}
+    - target: {fileID: 2699229889819815694, guid: 1859bf8345808d542b75e09c5caa78a0,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 1.47
+      objectReference: {fileID: 0}
+    - target: {fileID: 2699229889819815694, guid: 1859bf8345808d542b75e09c5caa78a0,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0.16
+      objectReference: {fileID: 0}
+    - target: {fileID: 2699229889819815694, guid: 1859bf8345808d542b75e09c5caa78a0,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0.85
+      objectReference: {fileID: 0}
+    - target: {fileID: 2699229890234081693, guid: 1859bf8345808d542b75e09c5caa78a0,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -0.28
+      objectReference: {fileID: 0}
+    - target: {fileID: 2699229890234081693, guid: 1859bf8345808d542b75e09c5caa78a0,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0.81
+      objectReference: {fileID: 0}
+    - target: {fileID: 2699229890234081693, guid: 1859bf8345808d542b75e09c5caa78a0,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0.68
+      objectReference: {fileID: 0}
     - target: {fileID: 4644766298187004448, guid: 1859bf8345808d542b75e09c5caa78a0,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -4686,6 +4716,16 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Enabled
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5542154133122317040, guid: 1859bf8345808d542b75e09c5caa78a0,
+        type: 3}
+      propertyPath: Lenght
+      value: 1.3
+      objectReference: {fileID: 0}
+    - target: {fileID: 7610019707395016386, guid: 1859bf8345808d542b75e09c5caa78a0,
+        type: 3}
+      propertyPath: m_Parameters.widthMultiplier
+      value: 0.305
       objectReference: {fileID: 0}
     - target: {fileID: 7639525589939535553, guid: 1859bf8345808d542b75e09c5caa78a0,
         type: 3}

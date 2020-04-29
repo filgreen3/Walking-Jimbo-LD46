@@ -11,6 +11,8 @@ public class SoundPlayer : MonoBehaviour
         var audioSource = WorldManager.Instance.WorldAudioSource;
         audioSource.pitch = Random.Range(.7f, 1.5f);
         audioSource.PlayOneShot(сlip);
+
+        audioSource.gameObject.transform.position = new Vector3(transform.position.x, transform.position.y,-10);
     }
 
 
