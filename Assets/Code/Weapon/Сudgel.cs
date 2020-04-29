@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class Сudgel : GenericItem
 {
-    bool isHitEnd;
+    bool isHitEnd = true;
     void OnTriggerEnter2D(Collider2D other)
     {
         if (isHitEnd && other.tag == "Player")
