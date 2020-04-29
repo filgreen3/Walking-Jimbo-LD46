@@ -6,6 +6,7 @@ using UnityEngine.UI;
 public class Enemy_AI : MonoBehaviour
 {
     public bool melee = false;
+    public bool tutorial = false;
     public float speed = 1f;
     public float distance = 10f;
 
@@ -84,6 +85,7 @@ public class Enemy_AI : MonoBehaviour
         animator.enabled = false;
         enabled = false;
         Body.AddForce(new Vector3(Random.Range(-0.3f, 0.3f), 1) * 1000f);
+        if (tutorial) Body.AddForce(new Vector3(1f, Random.Range(0f, 0.6f)) * 1000f);
     }
 
 

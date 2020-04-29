@@ -30,7 +30,9 @@ public class Tutorial : MonoBehaviour
 
     IEnumerator PlayText()
     {
+        
         canpress = false;
+        //yield return new WaitForSeconds(1f);
         txt.text = "";
         foreach (char c in story)
         {
