@@ -61,7 +61,7 @@ public class Character : MonoBehaviour
         {
             var pos = Rig.velocity;
             pos.y = (ray.point.y + 0.8f + CharacterOffestAddition) - Rig.position.y;
-            pos.y *= Mathf.Abs(pos.y) * forceUp;
+            pos.y *= forceUp;
             Rig.velocity = pos;
         }
 

@@ -11,6 +11,8 @@ public class BatteryLock : MonoBehaviour
 
     private void Start()
     {
+        if (usageBattery != null)
+            DisableBattery(usageBattery);
         player = transform.parent.GetComponent<Player>();
     }
 

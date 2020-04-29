@@ -72,9 +72,9 @@ GameObject:
   - component: {fileID: 7077139571508370206}
   - component: {fileID: 7077139571508370207}
   - component: {fileID: 911482410}
+  - component: {fileID: 7913185574913959844}
   - component: {fileID: 911482411}
   - component: {fileID: 911482409}
-  - component: {fileID: 911482414}
   m_Layer: 14
   m_Name: Sprites_03_16
   m_TagString: Untagged
@@ -168,6 +168,18 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
+--- !u!114 &7913185574913959844
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7077139571508370205}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8c123b102da5dd4488ccffa753129971, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!61 &911482411
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -178,7 +190,7 @@ BoxCollider2D:
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: -0.02, y: 0.9627447}
@@ -212,18 +224,6 @@ FixedJoint2D:
   m_ConnectedAnchor: {x: 0.86000085, y: 0.0000004172325}
   m_DampingRatio: 0
   m_Frequency: 0
---- !u!114 &911482414
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7077139571508370205}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0ff9018c732f55143b4ec89011f65dfc, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &7077139571551490843
 GameObject:
   m_ObjectHideFlags: 0
@@ -425,7 +425,7 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 911482414}
+      - m_Target: {fileID: 7913185574913959844}
         m_MethodName: Drop
         m_Mode: 1
         m_Arguments:
