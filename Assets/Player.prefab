@@ -1100,6 +1100,11 @@ MonoBehaviour:
   Transf: {fileID: 4644766298841020337}
   Arms:
   - {fileID: 5542154133122317040}
+  Legs:
+  - {fileID: 4644766297442307414}
+  - {fileID: 4644766297285431356}
+  - {fileID: 4644766298345778654}
+  - {fileID: 4644766298541938548}
   LegMask:
     serializedVersion: 2
     m_Bits: 768

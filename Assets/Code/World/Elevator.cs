@@ -19,8 +19,6 @@ public class Elevator : MonoBehaviour
     public GameObject CurrentLRoom;
     public GameObject CurrentCRoom;
 
-    public UnityEngine.UI.Image BlackScreen;
-
     Transform Player;
     public SpriteRenderer Indicator;
 
@@ -54,6 +52,7 @@ public class Elevator : MonoBehaviour
         Level++;
         Player.parent = gameObject.transform;
         Player.gameObject.GetComponent<Rigidbody2D>().bodyType = RigidbodyType2D.Kinematic;
+        Player.GetComponent<Player>().ActiveLeg(false);
         float elapsedTime = 0;
         float waitTime = 3f;
         Vector2 currentPos = transform.position;
@@ -62,16 +61,12 @@ public class Elevator : MonoBehaviour
         {
             transform.position = Vector3.Lerp(currentPos, Gotoposition, (elapsedTime / waitTime));
             elapsedTime += Time.fixedDeltaTime;
-
-            var color = BlackScreen.color;
-            color.a = Mathf.Sin((elapsedTime / waitTime) * Mathf.PI) * 1.5f;
-            BlackScreen.color = color;
-
             yield return waiter;
         }
         transform.position = Gotoposition;
         Player.parent = null;
         Player.gameObject.GetComponent<Rigidbody2D>().bodyType = RigidbodyType2D.Dynamic;
+        Player.GetComponent<Player>().ActiveLeg(true);
         Indicator.color = new Color(0.98f, 0.34f, 0.16f);
         yield return null;
 

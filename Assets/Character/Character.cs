@@ -6,7 +6,9 @@ public class Character : MonoBehaviour
 {
 
     [SerializeField] protected Transform Transf;
+
     [SerializeField] protected ArmIK[] Arms = default;
+    [SerializeField] protected LegIK[] Legs = default;
 
 
     public LayerMask LegMask;
@@ -26,7 +28,11 @@ public class Character : MonoBehaviour
     protected virtual bool ExtraCoditionToRotate => true;
 
 
-
+    public void ActiveLeg(bool active)
+    {
+        foreach (var leg in Legs)
+            leg.enabled = active;
+    }
 
     protected virtual void FixedUpdate()
     {
